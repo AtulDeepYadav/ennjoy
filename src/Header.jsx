@@ -4,9 +4,17 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 function Header({ onNavClick }) {
   return (
     <div className="bg-dark">
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav className="navbar navbar-expand-lg navbar-dark">
         <div className="container-fluid">
-          <a href=""><img src="src/img/ennjoy.png" alt="This is ennjoy" className="img-fluid" height={300} width={150} /></a>
+          <a href="/">
+            <img 
+              src="src/img/ennjoy.png" 
+              alt="Ennjoy logo" 
+              className="img-fluid" 
+              height={300} 
+              width={150} 
+            />
+          </a>
 
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span className="navbar-toggler-icon"></span>
