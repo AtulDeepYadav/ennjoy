@@ -1,42 +1,40 @@
-import { useState } from 'react'
-import './index.css'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bootstrap/dist/js/bootstrap.bundle.min.js'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
-function Header() {
+function Header({ onNavClick }) {
+  return (
+    <div className="bg-dark">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div className="container-fluid">
+          <a href=""><img src="src/img/ennjoy.png" alt="This is ennjoy" className="img-fluid" height={300} width={150} /></a>
 
-    return (
-        <>
-            <div class="bg-dark">
-                <nav className="navbar navbar-expand-lg navbar-dark bg-dark" style={{ backgroundColor: '#6f42c1' }}>
-                    <div className="container-fluid">
-                        <img src="src\img\ennjoy.png" alt="This is ennjoy" className="img-fluid" height={300} width={150} />
+          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span className="navbar-toggler-icon"></span>
+          </button>
 
-                        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                            <span className="navbar-toggler-icon"></span>
-                        </button>
-                        <div className="collapse navbar-collapse" id="navbarNav">
-                            <ul className="navbar-nav ms-auto">
-                                <li className="nav-item">
-                                    <a className="nav-link fw-bold text-warning px-2" href="#">Playz</a>
-                                </li>
-                               
-                                <li className="nav-item align">
-                                    <a className="nav-link fw-bold text-warning px-2" href="#">Vibez</a>
-                                </li>
-                               
-                                <li className="nav-item">
-                                    <a className="btn btn-primary px-2 fw-bold" href="#">Login</a>
-                                </li>
-                               
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-
-            </div>
-        </>
-    )
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav ms-auto">
+              <li className="nav-item">
+                <button className="nav-link fw-bold text-warning px-2 btn btn-link" onClick={() => onNavClick('playz')}>
+                  Playz
+                </button>
+              </li>
+              <li className="nav-item">
+                <button className="nav-link fw-bold text-warning px-2 btn btn-link" onClick={() => onNavClick('vibez')}>
+                  Vibez
+                </button>
+              </li>
+              <li className="nav-item">
+                <button className="btn btn-primary px-2 fw-bold" onClick={() => onNavClick('login')}>
+                  Login
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  );
 }
 
-export default Header
+export default Header;

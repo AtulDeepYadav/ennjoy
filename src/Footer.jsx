@@ -16,9 +16,9 @@ function Footer() {
                     <div className="col-md-4 mb-3">
                         <h6 className="fw-bold">Quick Links</h6>
                         <ul className="list-unstyled">
-                            <li><a href="#" className="text-white text-decoration-none">Reservation Policy</a></li>
-                            <li><a href="#" className="text-white text-decoration-none">Terms & Conditions</a></li>
-                            <li><a href="#" className="text-white text-decoration-none">Privacy Policy</a></li>
+                            {/* <li><a href="#" className="text-white text-decoration-none">Reservation Policy</a></li> */}
+                            <li><a href="src\tnc.html" className="text-white text-decoration-none">Terms & Conditions</a></li>
+                            <li><a href="src\privacy_policy.html" className="text-white text-decoration-none">Privacy Policy</a></li>
                             <li><a href="#" className="text-white text-decoration-none">About Ennjoy</a></li>
                             <li><a href="#" className="text-white text-decoration-none">Contact Us</a></li>
                         </ul>
