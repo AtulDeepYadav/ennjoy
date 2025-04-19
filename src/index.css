@@ -1,0 +1,56 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+
+
+
+
+.bg-purple {
+    background-color: #6f42c1 !important; /* Bootstrap purple */
+  }
+
+  body {
+	background: linear-gradient(-45deg, hsl(70, 84%, 42%), hsl(0, 0%, 98%), #186f8f, hsl(23, 85%, 48%));
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.rotate-img {
+    animation: rotate 20s linear infinite;
+  }
+  
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Adaptive Image Sizing */
+  .adaptive-img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+  }
+  
+  @media (min-width: 768px) {
+    .adaptive-img {
+      width: 700px;
+      height: 700px;
+    }
+  }
+  
