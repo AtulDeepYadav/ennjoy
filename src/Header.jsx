@@ -34,7 +34,7 @@ function Header({ onNavClick }) {
               </li>
               <li className="nav-item">
                 <button className="btn btn-primary px-2 fw-bold" onClick={() => onNavClick('login')}>
-                  Login
+                  Get Started
                 </button>
               </li>
             </ul>
