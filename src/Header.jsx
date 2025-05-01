@@ -1,5 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import logo from './img/ennjoy.png';
 
 function Header({ onNavClick }) {
   return (
@@ -8,7 +9,7 @@ function Header({ onNavClick }) {
         <div className="container-fluid">
           <a href="/">
             <img 
-              src="src/img/ennjoy.png" 
+              src={logo} 
               alt="Ennjoy logo" 
               className="img-fluid" 
               height={300} 
