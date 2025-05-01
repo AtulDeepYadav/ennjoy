@@ -24,7 +24,7 @@ function Header({ onNavClick }) {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-                <button className="nav-link fw-bold text-warning px-4 btn btn-link" onClick={() => onNavClick('about')}>
+                <button className="nav-link fw-bold text-warning px-4 btn btn-link" onClick={() => onNavClick('aboutus')}>
                   About Us
                 </button>
               </li>

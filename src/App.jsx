@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './index.css';
 import Header from './Header.jsx';
 import Body from './Body.jsx';
+import AboutUs from './AboutUs.jsx';
 import Playz from './Playz.jsx';
 import Vibez from './Vibez.jsx';
 import Footer from './Footer.jsx';
@@ -14,6 +15,8 @@ function App() {
 
   const renderContent = () => {
     switch (activePage) {
+      case 'aboutus':
+        return <AboutUs />;
       case 'playz':
         return <Playz />;
       case 'vibez':
