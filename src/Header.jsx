@@ -4,7 +4,7 @@ import logo from './img/ennjoy.png';
 
 function Header({ onNavClick }) {
   return (
-    <div className="bg-dark">
+    <div className="bg-dark rounded-4">
       <nav className="navbar navbar-expand-lg navbar-dark">
         <div className="container-fluid">
           <a href="/">

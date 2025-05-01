@@ -8,9 +8,9 @@ import bgImage from './img/bg-hero.jpg';
 function Body() {
     return (
         <>
-            <div className="bg-dark">
+            <div className="">
                 <div
-                    className="d-flex flex-column flex-md-row align-items-center justify-content-between vh-100 text-white"
+                    className="rounded-4 d-flex flex-column flex-md-row align-items-center justify-content-between vh-100 text-white"
                     style={{
                         backgroundImage: `url(${bgImage})`,
                         backgroundSize: 'cover',
@@ -20,7 +20,7 @@ function Body() {
                     }}
                 >
                     {/* Purple Overlay */}
-                    <div
+                    <div className="rounded-4"
                         style={{
                             position: 'absolute',
                             top: 0,

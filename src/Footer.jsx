@@ -3,7 +3,7 @@ import './index.css'; // in case you want custom styling
 
 function Footer() {
     return (
-        <footer className="bg-dark text-white pt-4 pb-3 mt-auto">
+        <footer className="bg-dark text-white pt-4 pb-3 mt-auto rounded-4">
             <div className="container">
                 <div className="row text-center text-md-start">
                     {/* Company Info */}
