@@ -10,7 +10,7 @@ function Body() {
         <>
             <div className="">
                 <div
-                    className="rounded-4 d-flex flex-column flex-md-row align-items-center justify-content-between vh-100 text-white"
+                    className="rounded-4 d-flex flex-column flex-md-row align-items-center justify-content-between vh-40 text-white"
                     style={{
                         backgroundImage: `url(${bgImage})`,
                         backgroundSize: 'cover',

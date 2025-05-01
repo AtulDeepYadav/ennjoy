@@ -11,7 +11,7 @@ function Header({ onNavClick }) {
             <img 
               src={logo} 
               alt="Ennjoy logo" 
-              className="img-fluid" 
+              className="img-fluid py-2" 
               height={300} 
               width={150} 
             />
@@ -23,18 +23,33 @@ function Header({ onNavClick }) {
 
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto">
+            <li className="nav-item">
+                <button className="nav-link fw-bold text-warning px-4 btn btn-link" onClick={() => onNavClick('about')}>
+                  About Us
+                </button>
+              </li>
               <li className="nav-item">
-                <button className="nav-link fw-bold text-warning px-2 btn btn-link" onClick={() => onNavClick('playz')}>
+                <button className="nav-link fw-bold text-warning px-4 btn btn-link" onClick={() => onNavClick('playz')}>
                   Playz
                 </button>
               </li>
               <li className="nav-item">
-                <button className="nav-link fw-bold text-warning px-2 btn btn-link" onClick={() => onNavClick('vibez')}>
+                <button className="nav-link fw-bold text-warning px-4 btn btn-link" onClick={() => onNavClick('vibez')}>
                   Vibez
                 </button>
               </li>
               <li className="nav-item">
-                <button className="btn btn-primary px-2 fw-bold" onClick={() => onNavClick('login')}>
+                <button className="nav-link fw-bold text-warning px-4 btn btn-link" onClick={() => onNavClick('ourteam')}>
+                  Our Team
+                </button>
+              </li>
+              <li className="nav-item">
+                <button className="nav-link fw-bold text-warning px-4 btn btn-link" onClick={() => onNavClick('contactus')}>
+                  Contact Us
+                </button>
+              </li>
+              <li className="nav-item">
+                <button className="btn btn-primary px-4 fw-bold" onClick={() => onNavClick('login')}>
                   Get Started
                 </button>
               </li>

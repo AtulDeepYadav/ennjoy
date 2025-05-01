@@ -6,6 +6,8 @@ import Playz from './Playz.jsx';
 import Vibez from './Vibez.jsx';
 import Footer from './Footer.jsx';
 import Login from './Login.jsx';
+import Policy from './Policy.jsx';
+import TermsAndConditions from './TermsAndConditions.jsx';
 
 function App() {
   const [activePage, setActivePage] = useState('home');
@@ -18,6 +20,10 @@ function App() {
         return <Vibez />;
       case 'login':
         return <Login />;
+      case 'policy':
+        return <Policy />;
+      case 'termsandconditions':
+        return <TermsAndConditions />;
       case 'home':
       default:
         return <Body />;
@@ -28,10 +34,11 @@ function App() {
     <div className="d-flex flex-column justify-content-center align-items-center container-fluid mt-3">
       <div className="flex-column justify-content-center align-items-center container-fluid mt-3">
         <Header onNavClick={setActivePage} />
-        <br /><br />
+        <br />
         {renderContent()}
-        <br /><br />
-        <Footer />
+        <br />
+        <Footer onNavClick={setActivePage} />
+        <br />
       </div>
     </div>
   );
