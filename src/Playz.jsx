@@ -1,7 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import image_1 from './img/about-1.jpg';
+import image_1 from './img/about-1.jpeg';
 import image_2 from './img/about-2.jpg';
 import image_3 from './img/about-3.jpg';
 
