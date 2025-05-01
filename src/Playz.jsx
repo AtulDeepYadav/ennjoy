@@ -1,12 +1,15 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import image_1 from './img/about-1.jpg';
+import image_2 from './img/about-2.jpg';
+import image_3 from './img/about-3.jpg';
 
 
 const events = [
-    { title: 'Cricket Tournament', img: 'src/img/about-1.jpg', desc: 'Join city’s biggest cricket showdown!' },
-    { title: 'Chess Masters', img: 'src/img/about-2.jpg', desc: 'Compete with the best minds.' },
-    { title: 'Football Fiesta', img: 'src/img/about-3.jpg', desc: 'Weekend 5v5 matches near you!' },
+    { title: 'Cricket Tournament', img: image_1, desc: 'Join city’s biggest cricket showdown!' },
+    { title: 'Chess Masters', img: image_2, desc: 'Compete with the best minds.' },
+    { title: 'Football Fiesta', img: image_3, desc: 'Weekend 5v5 matches near you!' },
 ];
 
 const reviews = [
