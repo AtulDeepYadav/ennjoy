@@ -11,7 +11,7 @@
   body {
 	background: linear-gradient(-45deg, hsl(70, 84%, 42%), hsl(0, 0%, 98%), #186f8f, hsl(23, 85%, 48%));
 	background-size: 400% 400%;
-	animation: gradient 10s ease infinite;
+	animation: gradient 4s ease infinite;
 	height: 100vh;
 }
 
