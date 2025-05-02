@@ -2,6 +2,15 @@ import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import playzImage_1 from './img/playz_1.jpeg';
+import playzImage_2 from './img/playz_2.jpeg';
+import playzImage_3 from './img/playz_3.jpeg';
+import vibezImage_1 from './img/vibez_1.jpg';
+import vibezImage_2 from './img/vibez_2.jpg';
+import vibezImage_3 from './img/vibez_3.jpg';
+
+
+
 
 const AboutUs = () => {
   const settings = {
@@ -16,15 +25,15 @@ const AboutUs = () => {
   };
 
   const playzImages = [
-    'src/img/playz_1.jpeg',
-    'src/img/playz_2.jpeg',
-    'src/img/playz_3.jpeg',
+    playzImage_1,
+    playzImage_2,
+    playzImage_3,
   ];
 
   const vibezImages = [
-    'src/img/vibez_1.jpg',
-    'src/img/vibez_2.jpg',
-    'src/img/vibez_3.jpg',
+    vibezImage_1,
+    vibezImage_2,
+    vibezImage_3,
   ];
 
   return (
