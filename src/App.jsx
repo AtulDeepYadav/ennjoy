@@ -9,6 +9,7 @@ import Footer from './Footer.jsx';
 import Login from './Login.jsx';
 import Policy from './Policy.jsx';
 import TermsAndConditions from './TermsAndConditions.jsx';
+import Team from './Team.jsx';
 
 function App() {
   const [activePage, setActivePage] = useState('home');
@@ -25,6 +26,8 @@ function App() {
         return <Login />;
       case 'policy':
         return <Policy />;
+        case 'ourteam':
+          return <Team />;
       case 'termsandconditions':
         return <TermsAndConditions />;
       case 'home':
