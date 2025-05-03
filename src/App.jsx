@@ -10,6 +10,7 @@ import Login from './Login.jsx';
 import Policy from './Policy.jsx';
 import TermsAndConditions from './TermsAndConditions.jsx';
 import Team from './Team.jsx';
+import ContactUs from './ContactUs.jsx';
 
 function App() {
   const [activePage, setActivePage] = useState('home');
@@ -26,8 +27,10 @@ function App() {
         return <Login />;
       case 'policy':
         return <Policy />;
-        case 'ourteam':
-          return <Team />;
+      case 'ourteam':
+        return <Team />;
+      case 'contactus':
+        return <ContactUs />;
       case 'termsandconditions':
         return <TermsAndConditions />;
       case 'home':
