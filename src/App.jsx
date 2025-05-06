@@ -11,6 +11,7 @@ import Policy from './Policy.jsx';
 import TermsAndConditions from './TermsAndConditions.jsx';
 import Team from './Team.jsx';
 import ContactUs from './ContactUs.jsx';
+import PaymentPage from './PaymentPage.jsx'; // Import the new PaymentPage component
 import { auth } from './firebaseConfig'; // Import your Firebase configuration
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 
@@ -61,6 +62,8 @@ function App() {
         return <ContactUs />;
       case 'termsandconditions':
         return <TermsAndConditions />;
+      case 'payment': // Add the case for payment page
+        return <PaymentPage />; // Render the PaymentPage component
       case 'home':
       default:
         return <Body />;
