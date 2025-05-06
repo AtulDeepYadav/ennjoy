@@ -1,29 +1,47 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import logo from './img/ennjoy.png';
+import maleImg from './img/male_avatar.png';
+import femaleImg from './img/female_avatar.png';
 
-function Header({ onNavClick }) {
+import { useNavigate } from 'react-router-dom';
+
+function Header({ user, onSignOut, onNavClick }) {
+  const navigate = useNavigate();
+
+  // Log user object for debugging
+  console.log("User Object: ", user);
+
+  // Check if user and user.gender are defined, otherwise default to male
+  const profileImg =
+    user && user.gender ? (user.gender === 'female' ? femaleImg : maleImg) : maleImg;
+
   return (
     <div className="bg-dark rounded-4">
       <nav className="navbar navbar-expand-lg navbar-dark">
         <div className="container-fluid">
           <a href="/">
-            <img 
-              src={logo} 
-              alt="Ennjoy logo" 
-              className="img-fluid py-2" 
-              height={300} 
-              width={150} 
+            <img
+              src={logo}
+              alt="Ennjoy logo"
+              className="img-fluid py-2"
+              height={300}
+              width={150}
             />
           </a>
 
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
             <span className="navbar-toggler-icon"></span>
           </button>
 
           <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav ms-auto">
-            <li className="nav-item">
+            <ul className="navbar-nav ms-auto align-items-center">
+              <li className="nav-item">
                 <button className="nav-link fw-bold text-warning px-4 btn btn-link" onClick={() => onNavClick('aboutus')}>
                   About Us
                 </button>
@@ -48,11 +66,32 @@ function Header({ onNavClick }) {
                   Contact Us
                 </button>
               </li>
-              <li className="nav-item">
-                <button className="btn btn-primary px-4 fw-bold" onClick={() => onNavClick('login')}>
-                  Get Started
-                </button>
-              </li>
+
+              {user ? (
+                <>
+                  <li className="nav-item d-flex align-items-center px-3">
+                    <img
+                      src={profileImg}
+                      alt="Profile"
+                      className="rounded-circle border"
+                      width="40"
+                      height="40"
+                      style={{ objectFit: 'cover' }}
+                    />
+                  </li>
+                  <li className="nav-item">
+                    <button className="btn btn-danger px-3 fw-bold ms-2" onClick={onSignOut}>
+                      Log Out
+                    </button>
+                  </li>
+                </>
+              ) : (
+                <li className="nav-item">
+                  <button className="btn btn-primary px-4 fw-bold ms-2" onClick={() => onNavClick('login')}>
+                    Get Started
+                  </button>
+                </li>
+              )}
             </ul>
           </div>
         </div>
