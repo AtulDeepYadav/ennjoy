@@ -101,7 +101,7 @@ function Playz() {
     });
 
     return (
-        <div className="bg-dark text-white py-4">
+        <div className="bg-dark text-white py-4 rounded-4">
             <h2 className="text-center text-warning mb-4">Playz - Sports Tournaments</h2>
 
             {/* Filters */}

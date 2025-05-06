@@ -18,7 +18,7 @@ const teamMembers = [
   },
   {
     name: "Harshit Agrawal",
-    bio: "The guy next door handling the events along with gals",
+    bio: "The guy next door handling the events",
     photo: teamImage_2,
     linkedin: "https://www.linkedin.com/in/cma-harshit-aggarwal?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     instagram: "https://www.instagram.com/harshitjii___?igsh=MXV3MGszajR6djhoNQ==",
