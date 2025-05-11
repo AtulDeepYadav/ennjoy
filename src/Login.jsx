@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
-import { GoogleAuthProvider, signInWithPopup, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
+import {
+  GoogleAuthProvider,
+  signInWithPopup,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from 'firebase/auth';
 import { auth, db } from './firebaseConfig';
 import { doc, setDoc } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
@@ -65,8 +70,15 @@ const Login = () => {
         alert('Signup successful! You can now log in.');
         setIsSignUp(false);
         setForm({
-          email: '', password: '', confirmPassword: '', fullName: '', dob: '', gender: '',
-          termsAgreed: false, phoneNumber: '', countryCode: '+91',
+          email: '',
+          password: '',
+          confirmPassword: '',
+          fullName: '',
+          dob: '',
+          gender: '',
+          termsAgreed: false,
+          phoneNumber: '',
+          countryCode: '+91',
         });
       } else {
         await signInWithEmailAndPassword(auth, form.email, form.password);
@@ -103,15 +115,35 @@ const Login = () => {
             <>
               <div className="mb-3">
                 <label className="form-label">Full Name</label>
-                <input type="text" className="form-control" name="fullName" value={form.fullName} onChange={handleChange} required />
+                <input
+                  type="text"
+                  className="form-control"
+                  name="fullName"
+                  value={form.fullName}
+                  onChange={handleChange}
+                  required
+                />
               </div>
               <div className="mb-3">
                 <label className="form-label">Date of Birth</label>
-                <input type="date" className="form-control" name="dob" value={form.dob} onChange={handleChange} required />
+                <input
+                  type="date"
+                  className="form-control"
+                  name="dob"
+                  value={form.dob}
+                  onChange={handleChange}
+                  required
+                />
               </div>
               <div className="mb-3">
                 <label className="form-label">Gender</label>
-                <select className="form-control" name="gender" value={form.gender} onChange={handleChange} required>
+                <select
+                  className="form-control"
+                  name="gender"
+                  value={form.gender}
+                  onChange={handleChange}
+                  required
+                >
                   <option value="">Select</option>
                   <option value="Male">Male</option>
                   <option value="Female">Female</option>
@@ -122,45 +154,80 @@ const Login = () => {
           )}
           <div className="mb-3">
             <label className="form-label">Email address</label>
-            <input type="email" className="form-control" name="email" value={form.email} onChange={handleChange} required />
+            <input
+              type="email"
+              className="form-control"
+              name="email"
+              value={form.email}
+              onChange={handleChange}
+              required
+            />
           </div>
           <div className="mb-3">
             <label className="form-label">Password</label>
-            <input type="password" className="form-control" name="password" value={form.password} onChange={handleChange} required />
+            <input
+              type="password"
+              className="form-control"
+              name="password"
+              value={form.password}
+              onChange={handleChange}
+              required
+            />
           </div>
           {isSignUp && (
             <div className="mb-3">
               <label className="form-label">Confirm Password</label>
-              <input type="password" className="form-control" name="confirmPassword" value={form.confirmPassword} onChange={handleChange} required />
+              <input
+                type="password"
+                className="form-control"
+                name="confirmPassword"
+                value={form.confirmPassword}
+                onChange={handleChange}
+                required
+              />
             </div>
           )}
           {isSignUp && (
-            <div className="form-check mb-3">
-              <input className="form-check-input" type="checkbox" name="termsAgreed" checked={form.termsAgreed} onChange={handleChange} required />
-              <label className="form-check-label">I agree to the terms and conditions</label>
-            </div>
-          )}
-          {isSignUp && (
-            <div className="mb-3">
-              <label className="form-label">Phone Number</label>
-              <div className="d-flex">
-                <select className="form-select me-2" name="countryCode" value={form.countryCode} onChange={handleChange} required>
-                  <option value="+91">+91 (India)</option>
-                  <option value="+1">+1 (USA)</option>
-                  <option value="+44">+44 (UK)</option>
-                  {/* Add more as needed */}
-                </select>
+            <>
+              <div className="form-check mb-3">
                 <input
-                  type="tel"
-                  className="form-control"
-                  name="phoneNumber"
-                  value={form.phoneNumber}
+                  className="form-check-input"
+                  type="checkbox"
+                  name="termsAgreed"
+                  checked={form.termsAgreed}
                   onChange={handleChange}
-                  placeholder="XXXXXXXXXX"
                   required
                 />
+                <label className="form-check-label">
+                  I agree to the terms and conditions
+                </label>
               </div>
-            </div>
+              <div className="mb-3">
+                <label className="form-label">Phone Number</label>
+                <div className="d-flex">
+                  <select
+                    className="form-select me-2"
+                    name="countryCode"
+                    value={form.countryCode}
+                    onChange={handleChange}
+                    required
+                  >
+                    <option value="+91">+91 (India)</option>
+                    <option value="+1">+1 (USA)</option>
+                    <option value="+44">+44 (UK)</option>
+                  </select>
+                  <input
+                    type="tel"
+                    className="form-control"
+                    name="phoneNumber"
+                    value={form.phoneNumber}
+                    onChange={handleChange}
+                    placeholder="XXXXXXXXXX"
+                    required
+                  />
+                </div>
+              </div>
+            </>
           )}
           <button type="submit" className="btn btn-primary w-100">
             {isSignUp ? 'Sign Up' : 'Login'}
@@ -172,11 +239,21 @@ const Login = () => {
             <>
               Already have an account?{' '}
               <button className="btn btn-link p-0" onClick={() => setIsSignUp(false)}>Login</button>
+              <br />
+              or{' '}
+              <button className="btn btn-link p-0" onClick={() => navigate('/vendor')}>
+                Register as a Vendor
+              </button>
             </>
           ) : (
             <>
               Don't have an account?{' '}
               <button className="btn btn-link p-0" onClick={() => setIsSignUp(true)}>Sign Up</button>
+              <br />
+              or{' '}
+              <button className="btn btn-link p-0" onClick={() => navigate('/vendor')}>
+                Register as a Vendor
+              </button>
             </>
           )}
         </div>
