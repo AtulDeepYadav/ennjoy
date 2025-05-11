@@ -101,7 +101,11 @@ const Login = () => {
       navigate('/');
     } catch (error) {
       console.error('Google Login Error:', error.message);
-      setError(error.message);
+      if (error.code === 'auth/popup-closed-by-user') {
+        setError('The popup was closed before completing the login process. Please try again.');
+      } else {
+        setError(error.message);
+      }
     }
   };
 
