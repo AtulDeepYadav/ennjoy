@@ -255,7 +255,7 @@ const Login = () => {
               <button className="btn btn-dark p-1 mt-1" onClick={() => setIsSignUp(true)}>Sign Up</button>
               <br />
               or{' '}
-              <a href="https://docs.google.com/forms/d/1sSTZReOll-kGDBdD_mRRXFCeRJ4inPCc3gUjLl9-LKo/preview">
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSdTVIFUHP-wAhw_-qmImul0hVpnt221JOrzDN0ntpzBw47Drg/viewform?usp=preview">
               <button className="btn btn-dark p-1 mt-1">
                 Register as a Vendor
               </button>
