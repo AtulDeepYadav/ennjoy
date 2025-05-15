@@ -3,9 +3,9 @@
 
 /* General Background Gradient Animation */
 body {
-  background: linear-gradient(60deg, #e72929, #17467b, #614f4f42, #c9f19c);
+  background: linear-gradient(135deg, #ed4a4a, #71737d, #ffdd34, #013433);
   background-size: 400% 400%;
-  animation: gradient 8s ease infinite;
+  animation: gradient 12s ease infinite;
   position: relative;
   overflow-x: hidden;
   margin: 0;
@@ -40,7 +40,7 @@ body {
   left: 0;
   pointer-events: none;
   overflow: hidden;
-  z-index: 1;
+  z-index: 0;
 }
 
 .particle {
@@ -50,7 +50,7 @@ body {
   background: white;
   border-radius: 50%;
   opacity: 0.6;
-  animation: drift 12s ease-in-out infinite;
+  animation: drift 6s ease-in-out infinite;
 }
 
 @keyframes drift {
@@ -65,57 +65,6 @@ body {
   100% {
     transform: translate(0, 0);
     opacity: 0.5;
-  }
-}
-
-/* Glowing Circle Background */
-.glowing-circle-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 1;
-}
-
-.glowing-circle {
-  position: absolute;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgb(255, 255, 255), transparent);
-  opacity: 0.7;
-  animation: floatGlow ease-in-out infinite;
-}
-
-.glowing-circle.small {
-  width: 30px;
-  height: 30px;
-}
-
-.glowing-circle.medium {
-  width: 80px;
-  height: 80px;
-}
-
-.glowing-circle.large {
-  width: 150px;
-  height: 150px;
-}
-
-/* Floating/Glowing Animation */
-@keyframes floatGlow {
-  0% {
-    transform: translateY(0) scale(1);
-    opacity: 0.6;
-  }
-  50% {
-    transform: translateY(-30px) scale(1.05);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(0) scale(1);
-    opacity: 0.6;
   }
 }
 
