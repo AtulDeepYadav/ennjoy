@@ -165,7 +165,7 @@ function Playz() {
                                 <div className="card h-100 bg-light text-dark rounded-4 shadow fixed-card d-flex flex-column">
                                     <img
                                         src={t.images[0]}
-                                        className="card-img-top rounded-top"
+                                        className="card-img-top rounded-4"
                                         style={{ height: '250px', objectFit: 'cover' }}
                                         alt={t.title}
                                     />

@@ -1,20 +1,27 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import heroImage from './img/hero.png';
 import bgImage from './img/bg-hero.jpg';
-import AboutUs from './AboutUs'; // Import AboutUs component
+import AboutUs from './AboutUs';
 
 function Body() {
-    const [showAbout, setShowAbout] = useState(false); // state to toggle AboutUs
+    const [showAbout, setShowAbout] = useState(false);
+
+    useEffect(() => {
+        const script = document.createElement('script');
+        script.src = 'https://snapwidget.com/js/snapwidget.js';
+        script.async = true;
+        document.body.appendChild(script);
+    }, []);
 
     if (showAbout) {
         return <AboutUs />;
     }
 
     return (
-        <div className="">
+        <div>
             <div
                 className="rounded-4 d-flex flex-column flex-md-row align-items-center justify-content-between vh-40 text-white"
                 style={{
@@ -56,7 +63,7 @@ function Body() {
                         🎉 <strong className="text-underline">Vibez:</strong> Host or join community hangouts, college fests, family functions, and more.
                     </p>
                     <p className="mb-2">
-                        Ennjoy empowers everyone to turn ideas into experiences. 
+                        Ennjoy empowers everyone to turn ideas into experiences.
                         <br />
                         <span className="text-bold text-warning lead mb-3">Click the circle to know more about us.</span>
                     </p>
@@ -67,7 +74,7 @@ function Body() {
                     <img
                         src={heroImage}
                         alt="Rotating"
-                        className="rounded-circle rotate-img adaptive-img"
+                        className="rounded-circle rotate-img adaptive-img w-100 h-100 px-3 py-3"
                         style={{ cursor: 'pointer' }}
                         onClick={() => setShowAbout(true)}
                     />

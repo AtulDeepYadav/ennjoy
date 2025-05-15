@@ -51,7 +51,7 @@ function App() {
       case 'playz':
         return <Playz />;
       case 'vibez':
-        return <Vibez />;
+        return <Vibez onNavClick={setActivePage} />;
       case 'login':
         return <Login />;
       case 'policy':

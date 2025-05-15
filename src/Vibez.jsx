@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import { useNavigate } from 'react-router-dom'; // For navigation
-import image_1 from './img/bookreading.jpg'; // used for preloading
-import image_2 from './img/vibez_1.jpg'; // used for preloading
-import image_3 from './img/vibez_3.jpg'; // used for preloading
-import VibezEvents from './Vibez_Events'; // in case you have plans to use it
-import events from './Vibez.json'; // 👈 Importing events data
+import { useNavigate } from 'react-router-dom';
+import image_1 from './img/bookreading.jpg';
+import image_2 from './img/vibez_1.jpg';
+import image_3 from './img/vibez_3.jpg';
+import VibezEvents from './Vibez_Events';
+import events from './Vibez.json';
 
 function Vibez() {
-    const navigate = useNavigate(); // React Router Hook
+    const navigate = useNavigate();
     const [selectedDate, setSelectedDate] = useState('');
     const [selectedEvent, setSelectedEvent] = useState(null);
     const [locations, setLocations] = useState({
@@ -27,7 +27,6 @@ function Vibez() {
     const handleMoreDetails = (event) => setSelectedEvent(event);
 
     const handleRegisterNow = (event) => {
-        // On Register Now button click, navigate to PaymentPage and pass event details
         navigate('/payment', { state: { event } });
     };
 
@@ -96,7 +95,7 @@ function Vibez() {
                                 <div className="card h-100 bg-light text-dark rounded-4 shadow d-flex flex-column">
                                     <img
                                         src={e.images[0]}
-                                        className="card-img-top rounded-top"
+                                        className="card-img-top rounded-4"
                                         style={{ height: '250px', objectFit: 'cover' }}
                                         alt={e.title}
                                     />
@@ -116,7 +115,12 @@ function Vibez() {
                                             <strong>Age Range:</strong> {e.minAge}-{e.maxAge}
                                         </p>
                                         <div className="mt-auto d-flex justify-content-between gap-2">
-                                            <button className="btn btn-warning w-50">Register Now</button>
+                                            <button
+                                                className="btn btn-warning w-50"
+                                                onClick={() => handleRegisterNow(e)}
+                                            >
+                                                Register Now
+                                            </button>
                                             <button
                                                 className="btn btn-outline-primary w-50"
                                                 onClick={() => handleMoreDetails(e)}
@@ -134,25 +138,23 @@ function Vibez() {
                 )}
             </div>
 
-            {/* Event Detail Modal */}
+            {/* Modal for Event Details */}
             {selectedEvent && (
                 <div
                     className="modal fade show"
-                    id="eventDetailsModal"
+                    style={{ display: 'block' }}
                     tabIndex="-1"
                     aria-labelledby="eventDetailsModalLabel"
-                    aria-hidden="true"
-                    style={{ display: 'block' }}
+                    aria-modal="true"
+                    role="dialog"
                 >
                     <div className="modal-dialog modal-lg">
                         <div className="modal-content">
                             <div className="modal-header">
-                                <h5 className="modal-title" id="eventDetailsModalLabel">{selectedEvent.title}</h5>
+                                <h5 className="modal-title">{selectedEvent.title}</h5>
                                 <button
                                     type="button"
                                     className="btn-close"
-                                    data-bs-dismiss="modal"
-                                    aria-label="Close"
                                     onClick={() => setSelectedEvent(null)}
                                 ></button>
                             </div>
@@ -161,15 +163,15 @@ function Vibez() {
                                     <div className="carousel-inner">
                                         {selectedEvent.images.map((img, index) => (
                                             <div className={`carousel-item ${index === 0 ? 'active' : ''}`} key={index}>
-                                                <img src={img} className="d-block w-100" alt={`Event ${index + 1}`} />
+                                                <img src={img} className="d-block w-100" alt={`Slide ${index}`} />
                                             </div>
                                         ))}
                                     </div>
                                     <button className="carousel-control-prev" type="button" data-bs-target="#eventImagesCarousel" data-bs-slide="prev">
-                                        <span className="carousel-control-prev-icon"></span>
+                                        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
                                     </button>
                                     <button className="carousel-control-next" type="button" data-bs-target="#eventImagesCarousel" data-bs-slide="next">
-                                        <span className="carousel-control-next-icon"></span>
+                                        <span className="carousel-control-next-icon" aria-hidden="true"></span>
                                     </button>
                                 </div>
 
@@ -201,11 +203,10 @@ function Vibez() {
                                 <p><strong>Smoking:</strong> {selectedEvent.smoke}</p>
                             </div>
                             <div className="modal-footer">
-                                <button className="btn btn-warning w-25" onClick={() => handleRegisterNow(selectedEvent)}>Register Now</button>
+                                <button className="btn btn-warning" onClick={() => handleRegisterNow(selectedEvent)}>Register Now</button>
                                 <button
                                     type="button"
                                     className="btn btn-secondary"
-                                    data-bs-dismiss="modal"
                                     onClick={() => setSelectedEvent(null)}
                                 >
                                     Close

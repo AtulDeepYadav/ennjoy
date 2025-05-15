@@ -85,6 +85,20 @@ const ContactUs = () => {
             </form>
           </div>
         </div>
+
+        <div className="container mt-4">
+          <h1 className="py-4 text-underline">Follow us on Instagram: <a 
+          href="https://www.instagram.com/ennjoywithus/">ennjoywithus</a></h1>
+                <iframe
+                    src="https://snapwidget.com/embed/1096455"
+                    className="snapwidget-widget w-100 rounded-4"
+                    allowTransparency="true"
+                    frameBorder="0"
+                    scrolling="Yes"
+                    style={{ border: 'none', overflow: 'hidden', height: '300px' }}
+                    title="Follow us on Instagram for all the latest updates"
+                ></iframe>
+            </div>
       </div>
     </div>
   );
