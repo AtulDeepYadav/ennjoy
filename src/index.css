@@ -1,61 +1,152 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
 @import 'bootstrap-icons/font/bootstrap-icons.css';
 
-
-
-
-.bg-purple {
-    background-color: #6f42c1 !important; /* Bootstrap purple */
-  }
-
-  body {
-	background: linear-gradient(60deg, hsl(69, 95%, 47%), hsl(0, 0%, 98%), #186f8f, hsl(23, 85%, 48%));
-	background-size: 400% 400%;
-	animation: gradient 5s ease infinite;
+/* General Background Gradient Animation */
+body {
+  background: linear-gradient(60deg, #e72929, #17467b, #614f4f42, #c9f19c);
+  background-size: 400% 400%;
+  animation: gradient 8s ease infinite;
+  position: relative;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }
 
+/* Gradient Animation Keyframes */
 @keyframes gradient {
-	0% {
-		background-position: 0% 25%;
-	}
-  25% {
-		background-position: 50% 25%;
+  0% {
+    background-position: 0% 25%;
   }
-	50% {
-		background-position: 75% 50%;
-	}
+  25% {
+    background-position: 50% 25%;
+  }
+  50% {
+    background-position: 75% 50%;
+  }
   75% {
-		background-position: 100% 75%;
-	}
-	100% {
-		background-position: 0% 100%;
-	}
+    background-position: 100% 75%;
+  }
+  100% {
+    background-position: 0% 100%;
+  }
+}
+
+/* Particle System Background */
+.particle-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.particle {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: drift 12s ease-in-out infinite;
+}
+
+@keyframes drift {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(40px, -30px);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 0.5;
+  }
+}
+
+/* Glowing Circle Background */
+.glowing-circle-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.glowing-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgb(255, 255, 255), transparent);
+  opacity: 0.7;
+  animation: floatGlow ease-in-out infinite;
+}
+
+.glowing-circle.small {
+  width: 30px;
+  height: 30px;
+}
+
+.glowing-circle.medium {
+  width: 80px;
+  height: 80px;
+}
+
+.glowing-circle.large {
+  width: 150px;
+  height: 150px;
+}
+
+/* Floating/Glowing Animation */
+@keyframes floatGlow {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-30px) scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.6;
+  }
+}
+
+/* Utility Classes */
+.bg-purple {
+  background-color: #6f42c1 !important;
 }
 
 .rotate-img {
-    animation: rotate 20s linear infinite;
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
   }
-  
-  @keyframes rotate {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
+  to {
+    transform: rotate(360deg);
   }
-  
-  /* Adaptive Image Sizing */
+}
+
+/* Adaptive Image Sizing */
+.adaptive-img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
   .adaptive-img {
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
+    width: 700px;
+    height: 700px;
   }
-  
-  @media (min-width: 768px) {
-    .adaptive-img {
-      width: 700px;
-      height: 700px;
-    }
-  }
-  
+}

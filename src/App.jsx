@@ -11,39 +11,27 @@ import Policy from './Policy.jsx';
 import TermsAndConditions from './TermsAndConditions.jsx';
 import Team from './Team.jsx';
 import ContactUs from './ContactUs.jsx';
-import PaymentPage from './PaymentPage.jsx'; // Import the new PaymentPage component
-import { auth } from './firebaseConfig'; // Import your Firebase configuration
+import PaymentPage from './PaymentPage.jsx';
+import { auth } from './firebaseConfig';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 
 function App() {
   const [activePage, setActivePage] = useState('home');
-  const [user, setUser] = useState(null); // Track user authentication state
+  const [user, setUser] = useState(null);
 
-  // Listen for authentication state changes
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        setUser(user); // Set user when logged in
-      } else {
-        setUser(null); // No user logged in
-      }
+      setUser(user || null);
     });
-
-    return () => unsubscribe(); // Cleanup on unmount
+    return () => unsubscribe();
   }, []);
 
-  // Handle user sign-out
   const handleSignOut = () => {
     signOut(auth)
-      .then(() => {
-        setUser(null); // Reset user state on sign out
-      })
-      .catch((error) => {
-        console.error('Sign-out error:', error);
-      });
+      .then(() => setUser(null))
+      .catch((error) => console.error('Sign-out error:', error));
   };
 
-  // Render the correct content based on the active page
   const renderContent = () => {
     switch (activePage) {
       case 'aboutus':
@@ -62,8 +50,8 @@ function App() {
         return <ContactUs />;
       case 'termsandconditions':
         return <TermsAndConditions />;
-      case 'payment': // Add the case for payment page
-        return <PaymentPage />; // Render the PaymentPage component
+      case 'payment':
+        return <PaymentPage />;
       case 'home':
       default:
         return <Body />;
@@ -71,20 +59,39 @@ function App() {
   };
 
   return (
-    <div className="d-flex flex-column justify-content-center align-items-center container-fluid mt-3">
-      <div className="flex-column justify-content-center align-items-center container-fluid mt-3">
-        <Header
-          onNavClick={setActivePage}
-          user={user} // Pass user data to Header
-          onSignOut={handleSignOut} // Pass sign-out handler to Header
-        />
-        <br />
-        {renderContent()}
-        <br />
-        <Footer onNavClick={setActivePage} />
-        <br />
+    <>
+      {/* ✅ Glowing Background Circles */}
+      <div className="particle-container">
+        {[...Array(200)].map((_, i) => (
+          <div
+            key={i}
+            className="particle"
+            style={{
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              animationDuration: `${8 + Math.random() * 8}s`,
+              animationDelay: `${Math.random() * 8}s`,
+            }}
+          />
+        ))}
       </div>
-    </div>
+
+      {/* Main UI */}
+      <div className="d-flex flex-column justify-content-center align-items-center container-fluid mt-3 position-relative" style={{ zIndex: 1 }}>
+        <div className="flex-column justify-content-center align-items-center container-fluid mt-3">
+          <Header
+            onNavClick={setActivePage}
+            user={user}
+            onSignOut={handleSignOut}
+          />
+          <br />
+          {renderContent()}
+          <br />
+          <Footer onNavClick={setActivePage} />
+          <br />
+        </div>
+      </div>
+    </>
   );
 }
 
