@@ -1,44 +1,181 @@
 import { useState, useEffect } from 'react';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import heroImage from './img/hero.png';
 import bgImage from './img/bg-hero.jpg';
 import AboutUs from './AboutUs';
-
-// Dummy images
 import team1 from './img/male_avatar.png';
+import groupA1 from './img/BoxMatch/chitrakootchamps.jpg';
+import groupA2 from './img/BoxMatch/shrimal.jpg';
+import groupA3 from './img/male_avatar.png';
+import groupA4 from './img/BoxMatch/eight.jpg';
+
+import groupB1 from './img/BoxMatch/pitch_raider.jpg';
+import groupB2 from './img/BoxMatch/therunmachine.jpg';
+import groupB3 from './img/male_avatar.png';
+import groupB4 from './img/male_avatar.png';
+
+import groupC1 from './img/BoxMatch/city_tigers.jpg';
+import groupC2 from './img/BoxMatch/hitman.jpg';
+import groupC3 from './img/BoxMatch/thunder.jpg';
+import groupC4 from './img/male_avatar.png';
+
+import groupD1 from './img/male_avatar.png';
+import groupD2 from './img/BoxMatch/vaishaliwarriors.jpg';
+import groupD3 from './img/male_avatar.png';
+import groupD4 from './img/male_avatar.png';
+
+
+
+
 
 function Body() {
     const [showAbout, setShowAbout] = useState(false);
+    const [carouselIndex, setCarouselIndex] = useState(0);
+
+    if (showAbout) return <AboutUs />;
+
+    const allGroups = {
+        'GROUP A': [
+            {
+                group: 'Group A',
+                name: 'Chitrakoot Champs',
+                image: groupA1,
+                captain: 'Satyam Sharma',
+                insta: 'https://instagram.com/teamalpha_bc',
+            },
+            {
+                group: 'Group A',
+                name: 'Shrimals Challengers',
+                image: groupA2,
+                captain: 'Sameer Shrimal',
+                insta: 'https://instagram.com/teamthunder_bc',
+            },
+            {
+                group: 'Group A',
+                name: 'Kings United',
+                image: groupA3,
+                captain: 'Hrithik Patel',
+                insta: 'https://instagram.com/teamblazers_bc',
+            },
+            {
+                group: 'Group A',
+                name: 'The Elite Eight',
+                image: groupA4,
+                captain: 'Aayush Jain',
+                insta: 'https://instagram.com/teamstrikers_bc',
+            },
+        ],
+        'GROUP B': [
+            {
+                group: 'Group B',
+                name: 'Pitch Raiders',
+                image: groupB1,
+                captain: 'Pranjal Jain',
+                insta: 'https://instagram.com/teamtitans_bc',
+            },
+            {
+                group: 'Group B',
+                name: 'The Run Machine',
+                image: groupB2,
+                captain: 'Mehul Jain',
+                insta: 'https://instagram.com/teamraptors_bc',
+            },
+            {
+                group: 'Group B',
+                name: 'Super Strikers',
+                image: groupB3,
+                captain: 'Akshat Jain',
+                insta: 'https://instagram.com/teamwarriors_bc',
+            },
+            {
+                group: 'Group B',
+                name: 'Team to be Added',
+                image: groupB4,
+                captain: 'Player Pending',
+                insta: 'https://instagram.com/teamhawks_bc',
+            },
+        ],
+        'GROUP C': [
+            {
+                group: 'Group C',
+                name: 'City Tigers',
+                image: groupC1,
+                captain: 'Brijesh Natani',
+                insta: 'https://instagram.com/teamphoenix_bc',
+            },
+            {
+                group: 'Group C',
+                name: 'Himanshu"s Hitman',
+                image: groupC2,
+                captain: 'Himanshu Agarwal',
+                insta: 'https://instagram.com/teamspartans_bc',
+            },
+            {
+                group: 'Group C',
+                name: 'Thunder Strikers',
+                image: groupC3,
+                captain: 'Rimesh Agarwal',
+                insta: 'https://instagram.com/teamwolves_bc',
+            },
+            {
+                group: 'Group C',
+                name: 'Team to be added',
+                image: groupC4,
+                captain: 'Player Pending',
+                insta: 'https://instagram.com/teamvipers_bc',
+            },
+        ],
+        'GROUP D': [
+            {
+                group: 'Group D',
+                name: 'AK 47',
+                image: groupD1,
+                captain: 'Aman Singh Shekhawat',
+                insta: 'https://instagram.com/teampanthers_bc',
+            },
+            {
+                group: 'Group D',
+                name: 'Vaishali Warriors',
+                image: groupD2,
+                captain: 'Himanshu Singh Rawat',
+                insta: 'https://instagram.com/teamcobras_bc',
+            },
+            {
+                group: 'Group D',
+                name: 'Team to be added',
+                image: groupD3,
+                captain: 'Player Pending',
+                insta: 'https://instagram.com/teamsharks_bc',
+            },
+            {
+                group: 'Group D',
+                name: 'Team to be added',
+                image: groupD4,
+                captain: 'Player Pending',
+                insta: 'https://instagram.com/teamfalcons_bc',
+            },
+        ],
+    };
+
+
+    // Carousel slides: each containing two group names
+    const slides = [
+        ['GROUP A', 'GROUP B'],
+        ['GROUP C', 'GROUP D'],
+    ];
 
     useEffect(() => {
-        const script = document.createElement('script');
-        script.src = 'https://snapwidget.com/js/snapwidget.js';
-        script.async = true;
-        document.body.appendChild(script);
+        const interval = setInterval(() => {
+            setCarouselIndex((prev) => (prev + 1) % slides.length);
+        }, 4000);
+        return () => clearInterval(interval);
     }, []);
 
-    if (showAbout) {
-        return <AboutUs />;
-    }
-
-    const teams = Array.from({ length: 16 }, (_, i) => ({
-        image: team1,
-        name: `Team ${i + 1}`,
-        captain: `Captain ${i + 1}`,
-        insta: `https://instagram.com/team${i + 1}`,
-        facebook: `https://facebook.com/team${i + 1}`,
-        twitter: `https://x.com/team${i + 1}`,
-    }));
-
-    const groupedTeams = [];
-    for (let i = 0; i < teams.length; i += 4) {
-        groupedTeams.push(teams.slice(i, i + 4));
-    }
+    const currentSlideGroups = slides[carouselIndex];
 
     return (
-        <div>
+        <div className="border border-warning border-4 rounded-4">
             {/* Hero Section */}
             <div
                 className="rounded-4 d-flex flex-column flex-md-row align-items-center justify-content-between vh-40 text-white"
@@ -62,14 +199,12 @@ function Body() {
                         zIndex: 0,
                     }}
                 />
-                <div
-                    className="text-center text-md-start mb-4 mb-md-0"
-                    style={{ zIndex: 1, maxWidth: '600px' }}
-                >
+                <div className="text-center text-md-start mb-4 mb-md-0" style={{ zIndex: 1, maxWidth: '600px' }}>
                     <h1 className="display-4 fw-bold">Welcome to Ennjoy</h1>
                     <p className="lead mb-3">Connect. Play. Celebrate.</p>
                     <p className="mb-2">
-                        <strong>Ennjoy</strong> is your all-in-one platform to bring people together — whether it's a cricket match with friends, a chess tournament at the park, or a cozy rooftop birthday party.
+                        <strong>Ennjoy</strong> is your all-in-one platform to bring people together — whether it's a cricket match
+                        with friends, a chess tournament at the park, or a cozy rooftop birthday party.
                     </p>
                     <p className="mb-2">
                         Ennjoy empowers everyone to turn ideas into experiences.
@@ -88,75 +223,50 @@ function Body() {
                 </div>
             </div>
 
-            {/* Carousel Section */}
-            <div className="text-dark mt-4 rounded-4 py-2">
-                <div className="bg-light rounded-4 px-4">
-                    <h2 className="text-center fw-bold"><u>Box Cricket Mania </u><br /> 
-                    <mark className="py-0">(Season 1)</mark></h2>
-                    <h4 className="text-center bg-dark rounded-4 text-light">24 & 25 May 2025</h4>
-                    <h5 className="text-center mb-4 text-warning"><u>Teams & Team Captains</u></h5>
-                
+            {/* Carousel Section for Group Slides */}
+            <div className="text-dark rounded-4 mt-4">
+                <div className="bg-light rounded-4 px-4 py-4">
+                    <h2 className="text-center fw-bold">
+                        <u className="">Box Cricket Mania</u>
+                        <br />
+                        <mark className="py-0 rounded-4">(Season 1)</mark>
+                    </h2>
+                    <h4 className="text-center bg-dark rounded-4 text-light py-2">24 & 25 May 2025</h4>
 
-                <div id="teamCarousel" className="carousel slide" data-bs-ride="carousel">
-                    <ol className="carousel-indicators">
-                        {groupedTeams.map((_, index) => (
-                            <li
-                                key={index}
-                                data-bs-target="#teamCarousel"
-                                data-bs-slide-to={index}
-                                className={index === 0 ? "active" : ""}
-                                style={{ backgroundColor: '#000', width: '20px', height: '20px', borderRadius: '50%' }}
-                            ></li>
-                        ))}
-                    </ol>
-                    <div className="carousel-inner px-2 py-2">
-                        {groupedTeams.map((group, groupIndex) => (
-                            <div className={`carousel-item ${groupIndex === 0 ? 'active' : ''}`} key={groupIndex}>
-                                <div className="row">
-                                    {group.map((team, idx) => (
-                                        <div className="col-md-3 mb-4" key={idx}>
-                                            <div className="card bg-dark text-white h-100">
-                                                <img
-                                                    src={team.image}
-                                                    className="card-img-top rounded-top"
-                                                    alt={team.name}
-                                                    style={{ height: '200px', objectFit: 'cover' }}
-                                                />
-                                                <div className="card-body">
-                                                    <h5 className="card-title">{team.name}</h5>
-                                                    <p className="card-text"><strong>Captain:</strong> {team.captain}</p>
-                                                    <div className="d-flex justify-content-center gap-3">
-                                                        <a href={team.insta} target="_blank" rel="noopener noreferrer" className="text-light">
-                                                            <i className="bi bi-instagram fs-5"></i>
-                                                        </a>
-                                                        <a href={team.facebook} target="_blank" rel="noopener noreferrer" className="text-light">
-                                                            <i className="bi bi-facebook fs-5"></i>
-                                                        </a>
-                                                        <a href={team.twitter} target="_blank" rel="noopener noreferrer" className="text-light">
-                                                            <i className="bi bi-twitter-x fs-5"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    
-                                    ))}
-                                    
-                                </div>
+                    {currentSlideGroups.map((groupName) => (
+                        <div key={groupName} className="mb-4">
+                            <h5 className="text-center text-primary mt-4">
+                                <u>{groupName}</u>
+                            </h5>
+                            <div className="row justify-content-center border border-4 border-dark rounded-4 py-2">
+                                {allGroups[groupName].map((team, idx) => (
+                                    <div
+                                        key={idx}
+                                        className="col-12 col-sm-6 col-md-3 text-center mb-4"
+                                        style={{ minWidth: '200px' }}
+                                    >
+                                        <img
+                                            src={team.image}
+                                            alt={team.name}
+                                            className="img-fluid rounded-circle border border-dark mb-2"
+                                            style={{ width: '120px', height: '120px', objectFit: 'cover' }}
+                                        />
+                                        <h4 className="fw-bold text-warning">{team.name}</h4>
+                                        <h5 className="mb-1">{team.captain}</h5>
+                                        <a
+                                            href={team.insta}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="btn btn-outline-primary btn-sm"
+                                            style={{ fontSize: '0.9rem' }}
+                                        >
+                                            <i className="bi bi-instagram me-1"></i>Instagram
+                                        </a>
+                                    </div>
+                                ))}
                             </div>
-                        ))}
                         </div>
-                    </div>
-
-                        {/* Carousel Controls */}
-                        <button className="carousel-control-prev" type="button" data-bs-target="#teamCarousel" data-bs-slide="prev">
-                            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span className="visually-hidden">Previous</span>
-                        </button>
-                        <button className="carousel-control-next" type="button" data-bs-target="#teamCarousel" data-bs-slide="next">
-                            <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span className="visually-hidden">Next</span>
-                        </button>
+                    ))}
                 </div>
             </div>
         </div>

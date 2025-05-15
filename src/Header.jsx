@@ -17,7 +17,7 @@ function Header({ user, onSignOut, onNavClick }) {
     user && user.gender ? (user.gender === 'female' ? femaleImg : maleImg) : maleImg;
 
   return (
-    <div className="bg-dark rounded-4">
+    <div className="bg-dark rounded-4 border border-warning border-4">
       <nav className="navbar navbar-expand-lg navbar-dark">
         <div className="container-fluid">
           <a href="/">
@@ -42,32 +42,32 @@ function Header({ user, onSignOut, onNavClick }) {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto align-items-center">
               <li className="nav-item">
-                <button className="nav-link fw-bold text-warning px-4 btn btn-link" onClick={() => onNavClick('home')}>
+                <button className="nav-link fw-bold text-warning px-2 btn btn-link" onClick={() => onNavClick('home')}>
                   Home
                 </button>
               </li>
               <li className="nav-item">
-                <button className="nav-link fw-bold text-warning px-4 btn btn-link" onClick={() => onNavClick('aboutus')}>
+                <button className="nav-link fw-bold text-warning px-2 btn btn-link" onClick={() => onNavClick('aboutus')}>
                   About Us
                 </button>
               </li>
               <li className="nav-item">
-                <button className="nav-link fw-bold text-warning px-4 btn btn-link" onClick={() => onNavClick('playz')}>
+                <button className="nav-link fw-bold text-warning px-2 btn btn-link" onClick={() => onNavClick('playz')}>
                   Playz
                 </button>
               </li>
               <li className="nav-item">
-                <button className="nav-link fw-bold text-warning px-4 btn btn-link" onClick={() => onNavClick('vibez')}>
+                <button className="nav-link fw-bold text-warning px-2 btn btn-link" onClick={() => onNavClick('vibez')}>
                   Vibez
                 </button>
               </li>
               <li className="nav-item">
-                <button className="nav-link fw-bold text-warning px-4 btn btn-link" onClick={() => onNavClick('ourteam')}>
+                <button className="nav-link fw-bold text-warning px-2 btn btn-link" onClick={() => onNavClick('ourteam')}>
                   Our Team
                 </button>
               </li>
               <li className="nav-item">
-                <button className="nav-link fw-bold text-warning px-4 btn btn-link" onClick={() => onNavClick('contactus')}>
+                <button className="nav-link fw-bold text-warning px-2 btn btn-link" onClick={() => onNavClick('contactus')}>
                   Contact Us
                 </button>
               </li>

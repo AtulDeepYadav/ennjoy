@@ -25,7 +25,7 @@ const AboutUs = () => {
   const vibezImages = [vibezImage_1, vibezImage_2, vibezImage_3];
 
   return (
-    <div className="bg-dark text-light py-5 px-3 rounded-4">
+    <div className="bg-dark text-light py-5 px-3 rounded-4 border border-warning border-4 rounded-4">
       <h1 className="text-center mb-4 text-warning">About Us</h1>
       <p className="text-center mb-3">
         Welcome to <span className="text-primary fw-bold">Ennjoy</span> – your go-to platform to break the routine, meet new people, and do what you love.

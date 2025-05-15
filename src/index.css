@@ -3,7 +3,7 @@
 
 /* General Background Gradient Animation */
 body {
-  background: linear-gradient(135deg, #ed4a4a, #71737d, #ffdd34, #013433);
+  background: linear-gradient(135deg, #ed4a4a, #c10cb2, #1358ac, #072a29);
   background-size: 400% 400%;
   animation: gradient 12s ease infinite;
   position: relative;
@@ -18,16 +18,16 @@ body {
     background-position: 0% 25%;
   }
   25% {
-    background-position: 50% 25%;
+    background-position: 25% 50%;
   }
   50% {
-    background-position: 75% 50%;
+    background-position: 50% 75%;
   }
   75% {
-    background-position: 100% 75%;
+    background-position: 75% 100%;
   }
   100% {
-    background-position: 0% 100%;
+    background-position: 100% 0%;
   }
 }
 

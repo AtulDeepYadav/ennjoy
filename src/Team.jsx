@@ -44,7 +44,7 @@ const teamMembers = [
 
 const TeamCards = () => {
   return (
-    <div className="bg-dark px-3 py-3 rounded-4">
+    <div className="bg-dark px-3 py-3 rounded-4 border border-warning border-4 rounded-4">
       <h3 className="mb-4 text-center text-warning">Meet Our Team</h3>
       <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
         {teamMembers.map((member, index) => (

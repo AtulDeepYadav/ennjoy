@@ -39,7 +39,7 @@ function Vibez() {
     });
 
     return (
-        <div className="bg-dark text-white py-4 rounded-4">
+        <div className="bg-dark text-white py-4 rounded-4 border border-warning border-4 rounded-4">
             <h2 className="text-center text-warning mb-4">Vibez</h2>
 
             {/* Filters */}

@@ -26,8 +26,8 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="">
-      <div className="bg-dark text-light rounded-4 p-4">
+    <div className="border border-warning border-4 rounded-4 bg-dark text-light rounded-4 p-4">
+      <div className="">
         <div className="row g-0">
           {/* Left Side: Image + Map */}
           <div className="col-md-6 d-flex flex-column">

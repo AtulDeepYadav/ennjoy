@@ -3,7 +3,7 @@ import './index.css';
 
 function Footer({ onNavClick }) {
     return (
-        <footer className="bg-dark text-white pt-4 pb-3 mt-auto rounded-4">
+        <footer className="bg-dark text-white pt-4 pb-3 mt-auto rounded-4 border border-warning border-4">
             <div className="container">
                 <div className="row text-center text-md-start">
                     {/* Company Info */}
