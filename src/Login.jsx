@@ -242,22 +242,24 @@ const Login = () => {
           {isSignUp ? (
             <>
               Already have an account?{' '}
-              <button className="btn btn-link p-0" onClick={() => setIsSignUp(false)}>Login</button>
+              <button className="btn btn-dark p-1 mt-1" onClick={() => setIsSignUp(false)}>Login</button>
               <br />
               or{' '}
-              <button className="btn btn-link p-0" onClick={() => navigate('/vendor')}>
+              <button className="btn btn-dark p-1 mt-1" onClick={() => navigate('/vendor')}>
                 Register as a Vendor
               </button>
             </>
           ) : (
             <>
               Don't have an account?{' '}
-              <button className="btn btn-link p-0" onClick={() => setIsSignUp(true)}>Sign Up</button>
+              <button className="btn btn-dark p-1 mt-1" onClick={() => setIsSignUp(true)}>Sign Up</button>
               <br />
               or{' '}
-              <button className="btn btn-link p-0" onClick={() => navigate('/vendor')}>
+              <a href="https://docs.google.com/forms/d/1sSTZReOll-kGDBdD_mRRXFCeRJ4inPCc3gUjLl9-LKo/preview">
+              <button className="btn btn-dark p-1 mt-1">
                 Register as a Vendor
               </button>
+              </a>
             </>
           )}
         </div>

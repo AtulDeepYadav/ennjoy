@@ -9,7 +9,7 @@
   }
 
   body {
-	background: linear-gradient(90deg, hsl(70, 84%, 42%), hsl(0, 0%, 98%), #186f8f, hsl(23, 85%, 48%));
+	background: linear-gradient(60deg, hsl(69, 95%, 47%), hsl(0, 0%, 98%), #186f8f, hsl(23, 85%, 48%));
 	background-size: 400% 400%;
 	animation: gradient 5s ease infinite;
 }

@@ -56,12 +56,7 @@ function Body() {
                     <p className="mb-2">
                         <strong>Ennjoy</strong> is your all-in-one platform to bring people together — whether it's a cricket match with friends, a chess tournament at the park, or a cozy rooftop birthday party.
                     </p>
-                    <p className="mb-2">
-                        ⚽ <strong className="text-underline">Playz:</strong> Meet people who love the same sports as you — book games, manage teams, and compete.
-                    </p>
-                    <p className="mb-2">
-                        🎉 <strong className="text-underline">Vibez:</strong> Host or join community hangouts, college fests, family functions, and more.
-                    </p>
+                    
                     <p className="mb-2">
                         Ennjoy empowers everyone to turn ideas into experiences.
                         <br />
