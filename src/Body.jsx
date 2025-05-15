@@ -91,9 +91,10 @@ function Body() {
             {/* Carousel Section */}
             <div className="text-dark mt-4 rounded-4 py-2">
                 <div className="bg-light rounded-4 px-4">
-                    <h2 className="text-center fw-bold">Box Cricket Mania <br /> (Season 1)</h2>
-                    <h4 className="text-center ">24 & 25 May 2025</h4>
-                    <h5 className="text-center mb-4 text-warning">Teams participating in the events</h5>
+                    <h2 className="text-center fw-bold"><u>Box Cricket Mania </u><br /> 
+                    <mark className="py-0">(Season 1)</mark></h2>
+                    <h4 className="text-center bg-dark rounded-4 text-light">24 & 25 May 2025</h4>
+                    <h5 className="text-center mb-4 text-warning"><u>Teams & Team Captains</u></h5>
                 
 
                 <div id="teamCarousel" className="carousel slide" data-bs-ride="carousel">
