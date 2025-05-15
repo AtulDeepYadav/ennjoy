@@ -99,3 +99,13 @@ body {
     height: 700px;
   }
 }
+
+.carousel-indicators {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.carousel-indicators li {
+    text-indent: -9999px; /* Hides any number fallback text */
+}
