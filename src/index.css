@@ -3,7 +3,7 @@
 
 /* General Background Gradient Animation */
 body {
-  background: linear-gradient(135deg, #ed4a4a, #c10cb2, #1358ac, #072a29);
+  background: linear-gradient(135deg, #a2beee, #edf6c1, #bfd6f3, #e7ebbb);
   background-size: 400% 400%;
   animation: gradient 12s ease infinite;
   position: relative;
@@ -45,12 +45,12 @@ body {
 
 .particle {
   position: absolute;
-  width: 5px;
-  height: 5px;
-  background: white;
+  width: 7px;
+  height: 7px;
+  background: rgb(0, 0, 0);
   border-radius: 50%;
   opacity: 0.6;
-  animation: drift 6s ease-in-out infinite;
+  animation: drift 5s ease-in-out infinite;
 }
 
 @keyframes drift {
