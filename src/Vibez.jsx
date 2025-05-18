@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { useNavigate } from 'react-router-dom';
+import { getAuth } from 'firebase/auth';
 import image_1 from './img/bookreading.jpg';
 import image_2 from './img/vibez_1.jpg';
 import image_3 from './img/vibez_3.jpg';
@@ -24,9 +25,30 @@ function Vibez() {
     };
 
     const handleDateChange = (e) => setSelectedDate(e.target.value);
-    const handleMoreDetails = (event) => setSelectedEvent(event);
+
+    const handleMoreDetails = (event) => {
+        const auth = getAuth();
+        const user = auth.currentUser;
+
+        if (!user) {
+            alert("Please login first to view more details.");
+            navigate('/login');
+            return;
+        }
+
+        setSelectedEvent(event);
+    };
 
     const handleRegisterNow = (event) => {
+        const auth = getAuth();
+        const user = auth.currentUser;
+
+        if (!user) {
+            alert("Please login first to register.");
+            navigate('/login');
+            return;
+        }
+
         navigate('/payment', { state: { event } });
     };
 
