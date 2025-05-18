@@ -4,30 +4,30 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import heroImage from './img/hero.png';
 import bgImage from './img/bg-hero.jpg';
 import AboutUs from './AboutUs';
-import team1 from './img/male_avatar.png';
+
+// Group A
 import groupA1 from './img/BoxMatch/chitrakootchamps.jpg';
 import groupA2 from './img/BoxMatch/shrimal.jpg';
 import groupA3 from './img/BoxMatch/knight_riders.jpg';
 import groupA4 from './img/BoxMatch/eight.jpg';
 
+// Group B
 import groupB1 from './img/BoxMatch/pitch_raider.jpg';
 import groupB2 from './img/BoxMatch/therunmachine.jpg';
 import groupB3 from './img/BoxMatch/superstriker.jpg';
 import groupB4 from './img/BoxMatch/hitman.jpg';
 
+// Group C
 import groupC1 from './img/BoxMatch/city_tigers.jpg';
 import groupC2 from './img/BoxMatch/one8.jpg';
 import groupC3 from './img/BoxMatch/playground.jpg';
 import groupC4 from './img/BoxMatch/riders.jpg';
 
+// Group D
 import groupD1 from './img/BoxMatch/playground.jpg';
 import groupD2 from './img/BoxMatch/vaishaliwarriors.jpg';
 import groupD3 from './img/BoxMatch/thunder.jpg';
 import groupD4 from './img/BoxMatch/NAB.jpg';
-
-
-
-
 
 function Body() {
     const [showAbout, setShowAbout] = useState(false);
@@ -158,8 +158,6 @@ function Body() {
         ],
     };
 
-
-    // Carousel slides: each containing two group names
     const slides = [
         ['GROUP A', 'GROUP B'],
         ['GROUP C', 'GROUP D'],
@@ -173,6 +171,64 @@ function Body() {
     }, []);
 
     const currentSlideGroups = slides[carouselIndex];
+
+
+    const testimonials = [
+        {
+            name: 'Sameer Shrimal',
+            quote: 'Ennjoy brings people together like never before. Whether sports or casual events, it’s the best platform to connect and have fun!',
+        },
+        {
+            name: 'Sunil Kumar Jain',
+            quote: 'From cricket to casual hangouts, Ennjoy has made organizing events effortless. A brilliant concept every community needs!',
+        },
+        {
+            name: 'Hasmukh Sharma',
+            quote: 'I’ve seen many platforms, but Ennjoy is something else. It connects people, promotes activity, and spreads joy all around.',
+        },
+        {
+            name: 'Rahul Kumawat',
+            quote: 'Ennjoy redefines event planning! It’s smooth, engaging, and gives every player or host the attention they truly deserve.',
+        },
+        {
+            name: 'Akshat Saxena',
+            quote: 'Ennjoy helped me host my first mini tournament. Everything was so easy to manage—this platform really boosts social sports!',
+        },
+        {
+            name: 'Abhinav Jangid (Owner of BIG STREET COFFEE)',
+            quote: 'From local sports to special evenings, Ennjoy fills the gap in the most fun and seamless way. Huge respect to the team!',
+        },
+        {
+            name: 'Ayush Patel',
+            quote: 'I love how Ennjoy makes booking and connecting with people so simple. It’s built for real-life fun, not just ideas!',
+        },
+    ];
+
+    const TestimonialCarousel = () => {
+        const [currentIndex, setCurrentIndex] = useState(0);
+
+        useEffect(() => {
+            const interval = setInterval(() => {
+                setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+            }, 2000); // change every 2 seconds
+
+            return () => clearInterval(interval); // cleanup on unmount
+        }, []);
+
+        const currentTestimonial = testimonials[currentIndex];
+
+        return (
+            <div className="testimonial-carousel mt-5 px-3 py-4 bg-dark text-white rounded-4">
+                <h4 className="text-center mb-4 text-warning fw-bold">Words of Support</h4>
+                <div className="p-4 bg-secondary rounded-4" style={{ minHeight: '160px', transition: 'opacity 0.5s ease' }}>
+                    <p className="mb-3" style={{ fontSize: '1.1rem' }}>"{currentTestimonial.quote}"</p>
+                    <p className="text-end fst-italic text-light mb-0">– {currentTestimonial.name}</p>
+                </div>
+            </div>
+        );
+    };
+
+
 
     return (
         <div className="border border-warning border-4 rounded-4">
@@ -223,11 +279,11 @@ function Body() {
                 </div>
             </div>
 
-            {/* Carousel Section for Group Slides */}
+            {/* Group Carousel Section */}
             <div className="text-dark rounded-4 mt-4">
                 <div className="bg-light rounded-4 px-4 py-4">
                     <h2 className="text-center fw-bold">
-                        <u className="">Box Cricket Mania</u>
+                        <u>Box Cricket Mania</u>
                         <br />
                         <mark className="py-0 rounded-4">(Season 1)</mark>
                     </h2>
@@ -258,7 +314,6 @@ function Body() {
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className="btn btn-outline-primary btn-sm"
-                                            style={{ fontSize: '0.9rem' }}
                                         >
                                             <i className="bi bi-instagram me-1"></i>Instagram
                                         </a>
@@ -269,6 +324,7 @@ function Body() {
                     ))}
                 </div>
             </div>
+            <TestimonialCarousel />
         </div>
     );
 }

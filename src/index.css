@@ -1,4 +1,4 @@
-@import 'bootstrap/dist/css/bootstrap.min.css';
+/* @import 'bootstrap/dist/css/bootstrap.min.css'; */
 @import 'bootstrap-icons/font/bootstrap-icons.css';
 
 /* General Background Gradient Animation */
@@ -108,4 +108,40 @@ body {
 
 .carousel-indicators li {
     text-indent: -9999px; /* Hides any number fallback text */
+}
+
+.testimonial-carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.scroll-container {
+    animation: scroll-left 25s linear infinite;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+.testimonial {
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+    background-color: #343a40;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+.testimonial-carousel .overflow-auto::-webkit-scrollbar {
+    display: none;
+}
+.testimonial-carousel .overflow-auto {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
 }
