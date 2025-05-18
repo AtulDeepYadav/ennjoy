@@ -7,23 +7,23 @@ import AboutUs from './AboutUs';
 import team1 from './img/male_avatar.png';
 import groupA1 from './img/BoxMatch/chitrakootchamps.jpg';
 import groupA2 from './img/BoxMatch/shrimal.jpg';
-import groupA3 from './img/male_avatar.png';
+import groupA3 from './img/BoxMatch/knight_riders.jpg';
 import groupA4 from './img/BoxMatch/eight.jpg';
 
 import groupB1 from './img/BoxMatch/pitch_raider.jpg';
 import groupB2 from './img/BoxMatch/therunmachine.jpg';
-import groupB3 from './img/male_avatar.png';
-import groupB4 from './img/male_avatar.png';
+import groupB3 from './img/BoxMatch/superstriker.jpg';
+import groupB4 from './img/BoxMatch/hitman.jpg';
 
 import groupC1 from './img/BoxMatch/city_tigers.jpg';
-import groupC2 from './img/BoxMatch/hitman.jpg';
-import groupC3 from './img/BoxMatch/thunder.jpg';
-import groupC4 from './img/male_avatar.png';
+import groupC2 from './img/BoxMatch/one8.jpg';
+import groupC3 from './img/BoxMatch/playground.jpg';
+import groupC4 from './img/BoxMatch/riders.jpg';
 
-import groupD1 from './img/male_avatar.png';
+import groupD1 from './img/BoxMatch/playground.jpg';
 import groupD2 from './img/BoxMatch/vaishaliwarriors.jpg';
-import groupD3 from './img/male_avatar.png';
-import groupD4 from './img/male_avatar.png';
+import groupD3 from './img/BoxMatch/thunder.jpg';
+import groupD4 from './img/BoxMatch/NAB.jpg';
 
 
 
@@ -42,28 +42,28 @@ function Body() {
                 name: 'Chitrakoot Champs',
                 image: groupA1,
                 captain: 'Satyam Sharma',
-                insta: 'https://instagram.com/teamalpha_bc',
+                insta: 'https://www.instagram.com/satyam_sha/',
             },
             {
                 group: 'Group A',
-                name: 'Shrimals Challengers',
+                name: "Shrimal's Challengers",
                 image: groupA2,
                 captain: 'Sameer Shrimal',
-                insta: 'https://instagram.com/teamthunder_bc',
+                insta: 'https://www.instagram.com/shrimalsameer/',
             },
             {
                 group: 'Group A',
                 name: 'Kings United',
                 image: groupA3,
                 captain: 'Hrithik Patel',
-                insta: 'https://instagram.com/teamblazers_bc',
+                insta: 'https://www.instagram.com/hritik._299/',
             },
             {
                 group: 'Group A',
                 name: 'The Elite Eight',
                 image: groupA4,
                 captain: 'Aayush Jain',
-                insta: 'https://instagram.com/teamstrikers_bc',
+                insta: 'https://www.instagram.com/ayushjainmusic/',
             },
         ],
         'GROUP B': [
@@ -72,28 +72,28 @@ function Body() {
                 name: 'Pitch Raiders',
                 image: groupB1,
                 captain: 'Pranjal Jain',
-                insta: 'https://instagram.com/teamtitans_bc',
+                insta: 'https://www.instagram.com/pranjalj662/',
             },
             {
                 group: 'Group B',
                 name: 'The Run Machine',
                 image: groupB2,
                 captain: 'Mehul Jain',
-                insta: 'https://instagram.com/teamraptors_bc',
+                insta: 'https://www.instagram.com/mehuljain_03/',
             },
             {
                 group: 'Group B',
                 name: 'Super Strikers',
                 image: groupB3,
                 captain: 'Akshat Jain',
-                insta: 'https://instagram.com/teamwarriors_bc',
+                insta: 'https://www.instagram.com/akshatjain3161/',
             },
             {
                 group: 'Group B',
-                name: 'Team to be Added',
+                name: "Himanshu's Hitman",
                 image: groupB4,
-                captain: 'Player Pending',
-                insta: 'https://instagram.com/teamhawks_bc',
+                captain: 'Himanshu Agarwal',
+                insta: 'https://www.instagram.com/himanshuagarwal857/',
             },
         ],
         'GROUP C': [
@@ -102,58 +102,58 @@ function Body() {
                 name: 'City Tigers',
                 image: groupC1,
                 captain: 'Brijesh Natani',
-                insta: 'https://instagram.com/teamphoenix_bc',
+                insta: 'https://www.instagram.com/brijesh95300/',
             },
             {
                 group: 'Group C',
-                name: 'Himanshu"s Hitman',
+                name: 'One8',
                 image: groupC2,
-                captain: 'Himanshu Agarwal',
-                insta: 'https://instagram.com/teamspartans_bc',
+                captain: 'Aniket Nahar',
+                insta: 'https://www.instagram.com/aniket.naharr/',
             },
             {
                 group: 'Group C',
-                name: 'Thunder Strikers',
+                name: 'Playground Kings',
                 image: groupC3,
-                captain: 'Rimesh Agarwal',
-                insta: 'https://instagram.com/teamwolves_bc',
+                captain: 'Karan Fagna',
+                insta: 'https://www.instagram.com/karangfagna/',
             },
             {
                 group: 'Group C',
-                name: 'Team to be added',
+                name: 'The Riders',
                 image: groupC4,
-                captain: 'Player Pending',
-                insta: 'https://instagram.com/teamvipers_bc',
+                captain: 'Taranjeet Singh',
+                insta: 'https://www.instagram.com/kakarider1313/',
             },
         ],
         'GROUP D': [
             {
                 group: 'Group D',
-                name: 'AK 47',
+                name: 'Boom Boom Bros',
                 image: groupD1,
-                captain: 'Aman Singh Shekhawat',
-                insta: 'https://instagram.com/teampanthers_bc',
+                captain: 'Harsh Khatod',
+                insta: 'https://instagram.com/khatodharsh19/',
             },
             {
                 group: 'Group D',
                 name: 'Vaishali Warriors',
                 image: groupD2,
-                captain: 'Himanshu Singh Rawat',
-                insta: 'https://instagram.com/teamcobras_bc',
+                captain: 'Himanshu Rawat',
+                insta: 'https://www.instagram.com/himanshu_rawat5570/',
             },
             {
                 group: 'Group D',
-                name: 'Team to be added',
+                name: 'Thunder Strikers',
                 image: groupD3,
-                captain: 'Player Pending',
-                insta: 'https://instagram.com/teamsharks_bc',
+                captain: 'Rimesh Agarwal',
+                insta: 'https://www.instagram.com/rimeshagarwal/',
             },
             {
                 group: 'Group D',
-                name: 'Team to be added',
+                name: 'NAB',
                 image: groupD4,
-                captain: 'Player Pending',
-                insta: 'https://instagram.com/teamfalcons_bc',
+                captain: 'Himanshu Soni',
+                insta: 'https://instagram.com/himanshusoni_9/',
             },
         ],
     };
