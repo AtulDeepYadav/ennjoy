@@ -5,6 +5,7 @@ import heroImage from './img/hero.png';
 import bgImage from './img/bg-hero.jpg';
 import AboutUs from './AboutUs';
 import CardSlider from './CardSlider';
+import TestimonialCarousel from './TestimonialCarousel';
 
 // Group A
 import groupA1 from './img/BoxMatch/chitrakootchamps.jpg';
@@ -34,8 +35,6 @@ import groupD4 from './img/BoxMatch/NAB.jpg';
 function Body() {
     const [showAbout, setShowAbout] = useState(false);
     const [carouselIndex, setCarouselIndex] = useState(0);
-
-    if (showAbout) return <AboutUs />;
 
     const allGroups = {
         'GROUP A': [
@@ -174,65 +173,9 @@ function Body() {
 
     const currentSlideGroups = slides[carouselIndex];
 
-
-    const testimonials = [
-        {
-            name: 'Sameer Shrimal',
-            quote: 'Ennjoy brings people together like never before. Whether sports or casual events, it’s the best platform to connect and have fun!',
-        },
-        {
-            name: 'Sunil Kumar Jain',
-            quote: 'From cricket to casual hangouts, Ennjoy has made organizing events effortless. A brilliant concept every community needs!',
-        },
-        {
-            name: 'Hasmukh Sharma',
-            quote: 'I’ve seen many platforms, but Ennjoy is something else. It connects people, promotes activity, and spreads joy all around.',
-        },
-        {
-            name: 'Rahul Kumawat',
-            quote: 'Ennjoy redefines event planning! It’s smooth, engaging, and gives every player or host the attention they truly deserve.',
-        },
-        {
-            name: 'Akshat Saxena',
-            quote: 'Ennjoy helped me host my first mini tournament. Everything was so easy to manage—this platform really boosts social sports!',
-        },
-        {
-            name: 'Abhinav Jangid (Owner of BIG STREET COFFEE)',
-            quote: 'From local sports to special evenings, Ennjoy fills the gap in the most fun and seamless way. Huge respect to the team!',
-        },
-        {
-            name: 'Ayush Patel',
-            quote: 'I love how Ennjoy makes booking and connecting with people so simple. It’s built for real-life fun, not just ideas!',
-        },
-    ];
-
-    const TestimonialCarousel = () => {
-        const [currentIndex, setCurrentIndex] = useState(0);
-
-        useEffect(() => {
-            const interval = setInterval(() => {
-                setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
-            }, 2000); // change every 2 seconds
-
-            return () => clearInterval(interval); // cleanup on unmount
-        }, []);
-
-        const currentTestimonial = testimonials[currentIndex];
-
-        return (
-            <div className="testimonial-carousel mt-5 px-3 py-4 bg-dark text-white rounded-4">
-                <h4 className="text-center mb-4 text-warning fw-bold">Words of Support</h4>
-                <div className="p-4 bg-secondary rounded-4" style={{ minHeight: '160px', transition: 'opacity 0.5s ease' }}>
-                    <p className="mb-3" style={{ fontSize: '1.1rem' }}>"{currentTestimonial.quote}"</p>
-                    <p className="text-end fst-italic text-light mb-0">– {currentTestimonial.name}</p>
-                </div>
-            </div>
-        );
-    };
-
-
-
-    return (
+    return showAbout ? (
+        <AboutUs onBack={() => setShowAbout(false)} />
+    ) : (
         <div className="border border-warning border-4 rounded-4">
             {/* Hero Section */}
             <div

@@ -145,3 +145,78 @@ body {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
 }
+
+.testimonial-carousel {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+    overflow: hidden;
+    padding: 20px 10px;
+}
+
+.testimonial-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    transition: transform 0.5s ease-in-out;
+}
+
+.testimonial-card {
+    background: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.quote {
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.name {
+    font-weight: bold;
+    color: #555;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    background-color: #ccc;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #333;
+}
+
+.aesthetic-tab {
+  font-size: 1.1rem;
+  color: #fff !important;              /* Pure white text */
+  background: transparent !important;  /* Transparent background */
+  box-shadow: none !important;         /* No shadow */
+  margin: 0 0.25rem;
+  border-radius: 2rem;
+  border: none !important;             /* Remove borders */
+  transition: background 0.2s, color 0.2s;
+  padding: 0.5rem 1.2rem;
+}
+.aesthetic-tab:hover,
+.aesthetic-tab:focus {
+  background: rgba(255,255,255,0.12) !important; /* Subtle white overlay on hover/focus */
+  color: #fff !important;
+  outline: none;
+}

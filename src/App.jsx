@@ -34,8 +34,6 @@ function App() {
 
   const renderContent = () => {
     switch (activePage) {
-      case 'aboutus':
-        return <AboutUs />;
       case 'playz':
         return <Playz />;
       case 'vibez':

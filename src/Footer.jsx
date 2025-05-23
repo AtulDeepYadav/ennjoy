@@ -52,9 +52,9 @@ function Footer({ onNavClick }) {
                     {/* Social Media */}
                     <div className="col-md-4 mb-3">
                         <h6 className="fw-bold">Follow Us</h6>
-                        <a href="#" className="text-white me-3"><i className="bi bi-facebook"></i> Facebook</a><br />
-                        <a href="#" className="text-white me-3"><i className="bi bi-instagram"></i> Instagram</a><br />
-                        <a href="#" className="text-white"><i className="bi bi-twitter-x"></i> Twitter</a>
+                        <a href="https://www.linkedin.com/company/ennjoy/about/" className="text-white me-3"><i className="bi bi-linkedin"></i> LinkedIn</a><br />
+                        <a href="https://www.instagram.com/ennjoywithus/" className="text-white me-3"><i className="bi bi-instagram"></i> Instagram</a><br />
+                        <a href="https://x.com/Ennjoywithus" className="text-white"><i className="bi bi-twitter-x"></i> X(Twitter)</a>
                     </div>
                 </div>
 

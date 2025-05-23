@@ -41,36 +41,36 @@ function Header({ user, onSignOut, onNavClick }) {
 
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto align-items-center">
-              <li className="nav-item">
-                <button className="nav-link fw-bold text-warning px-2 btn btn-link" onClick={() => onNavClick('home')}>
-                  Home
-                </button>
-              </li>
-              <li className="nav-item">
-                <button className="nav-link fw-bold text-warning px-2 btn btn-link" onClick={() => onNavClick('aboutus')}>
-                  About Us
-                </button>
-              </li>
-              <li className="nav-item">
-                <button className="nav-link fw-bold text-warning px-2 btn btn-link" onClick={() => onNavClick('playz')}>
-                  Playz
-                </button>
-              </li>
-              <li className="nav-item">
-                <button className="nav-link fw-bold text-warning px-2 btn btn-link" onClick={() => onNavClick('vibez')}>
-                  Vibez
-                </button>
-              </li>
-              <li className="nav-item">
-                <button className="nav-link fw-bold text-warning px-2 btn btn-link" onClick={() => onNavClick('ourteam')}>
-                  Our Team
-                </button>
-              </li>
-              <li className="nav-item">
-                <button className="nav-link fw-bold text-warning px-2 btn btn-link" onClick={() => onNavClick('contactus')}>
-                  Contact Us
-                </button>
-              </li>
+              {[
+                { key: 'home', label: 'Home' },
+                // { key: 'aboutus', label: 'About Us' }, // Uncomment if needed
+                { key: 'playz', label: 'Playz' },
+                { key: 'vibez', label: 'Vibez' },
+                { key: 'ourteam', label: 'Our Team' },
+                { key: 'contactus', label: 'Contact Us' },
+              ].map(tab => (
+                <li className="nav-item mx-1" key={tab.key}>
+                  <button
+                    className="nav-link fw-bold px-3 btn btn-link aesthetic-tab"
+                    style={{
+                      color: '#555', // Gray color for tab text
+                      borderRadius: '2rem',
+                      transition: 'background 0.2s, color 0.2s',
+                    }}
+                    onClick={() => onNavClick(tab.key)}
+                    onMouseOver={e => {
+                      e.currentTarget.style.background = '#e3e3e3';
+                      e.currentTarget.style.color = '#0a174e'; // Navy blue on hover
+                    }}
+                    onMouseOut={e => {
+                      e.currentTarget.style.background = 'transparent';
+                      e.currentTarget.style.color = '#555';
+                    }}
+                  >
+                    {tab.label}
+                  </button>
+                </li>
+              ))}
 
               {user ? (
                 <>

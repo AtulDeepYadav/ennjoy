@@ -9,7 +9,7 @@ import vibezImage_1 from './img/vibez_1.jpg';
 import vibezImage_2 from './img/vibez_2.jpg';
 import vibezImage_3 from './img/vibez_3.jpg';
 
-const AboutUs = () => {
+const AboutUs = ({ onBack }) => {
   const sliderSettings = {
     dots: true,
     infinite: true,
@@ -26,6 +26,9 @@ const AboutUs = () => {
 
   return (
     <div className="bg-dark text-light py-5 px-3 rounded-4 border border-warning border-4 rounded-4">
+      <button className="btn btn-primary mb-3" onClick={onBack}>
+        ← Back
+      </button>
       <h1 className="text-center mb-4 text-warning">About Us</h1>
       <p className="text-center mb-3">
         Welcome to <span className="text-primary fw-bold">Ennjoy</span> – your go-to platform to break the routine, meet new people, and do what you love.
