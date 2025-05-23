@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import heroImage from './img/hero.png';
 import bgImage from './img/bg-hero.jpg';
 import AboutUs from './AboutUs';
+import CardSlider from './CardSlider';
 
 // Group A
 import groupA1 from './img/BoxMatch/chitrakootchamps.jpg';
@@ -28,6 +29,7 @@ import groupD1 from './img/BoxMatch/playground.jpg';
 import groupD2 from './img/BoxMatch/vaishaliwarriors.jpg';
 import groupD3 from './img/BoxMatch/thunder.jpg';
 import groupD4 from './img/BoxMatch/NAB.jpg';
+
 
 function Body() {
     const [showAbout, setShowAbout] = useState(false);
@@ -278,6 +280,8 @@ function Body() {
                     />
                 </div>
             </div>
+
+            <CardSlider />
 
             {/* Group Carousel Section */}
             <div className="text-dark rounded-4 mt-4">
