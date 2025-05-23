@@ -186,6 +186,9 @@ function Body() {
                     backgroundPosition: 'center',
                     position: 'relative',
                     padding: '2rem',
+                    minHeight: '340px',
+                    boxShadow: '0 8px 32px 0 rgba(31,38,135,0.18)',
+                    overflow: 'hidden',
                 }}
             >
                 <div
@@ -196,7 +199,8 @@ function Body() {
                         left: 0,
                         width: '100%',
                         height: '100%',
-                        backgroundColor: 'hsla(300, 78.90%, 3.70%, 0.76)',
+                        background: 'rgba(10,23,78,0.45)',
+                        backdropFilter: 'blur(8px)',
                         zIndex: 0,
                     }}
                 />

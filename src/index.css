@@ -3,32 +3,9 @@
 
 /* General Background Gradient Animation */
 body {
-  background: linear-gradient(135deg, #a2beee, #edf6c1, #bfd6f3, #e7ebbb);
-  background-size: 400% 400%;
-  animation: gradient 12s ease infinite;
-  position: relative;
-  overflow-x: hidden;
+  background: #f6fbff;
   margin: 0;
   padding: 0;
-}
-
-/* Gradient Animation Keyframes */
-@keyframes gradient {
-  0% {
-    background-position: 0% 25%;
-  }
-  25% {
-    background-position: 25% 50%;
-  }
-  50% {
-    background-position: 50% 75%;
-  }
-  75% {
-    background-position: 75% 100%;
-  }
-  100% {
-    background-position: 100% 0%;
-  }
 }
 
 /* Particle System Background */
@@ -204,19 +181,53 @@ body {
 }
 
 .aesthetic-tab {
+  color: #fff !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 2rem !important;
   font-size: 1.1rem;
-  color: #fff !important;              /* Pure white text */
-  background: transparent !important;  /* Transparent background */
-  box-shadow: none !important;         /* No shadow */
-  margin: 0 0.25rem;
-  border-radius: 2rem;
-  border: none !important;             /* Remove borders */
-  transition: background 0.2s, color 0.2s;
-  padding: 0.5rem 1.2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: background 0.2s, color 0.2s, transform 0.18s;
+  padding: 0.5rem 1.5rem;
 }
 .aesthetic-tab:hover,
 .aesthetic-tab:focus {
-  background: rgba(255,255,255,0.12) !important; /* Subtle white overlay on hover/focus */
-  color: #fff !important;
+  background: rgba(255,255,255,0.18) !important;
+  color: #0a174e !important;
   outline: none;
+  transform: scale(1.07);
+}
+
+.shadow-lg {
+  box-shadow: 0 8px 32px 0 rgba(31,38,135,0.18) !important;
+}
+
+.footer-link {
+  color: #fff !important;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: color 0.2s;
+}
+.footer-link:hover {
+  color: #ffd180 !important;
+  text-decoration: underline;
+}
+
+.footer-social-link {
+  color: #fff !important;
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+  transition: color 0.2s, transform 0.2s;
+  display: inline-block;
+}
+.footer-social-link:hover {
+  color: #ffd180 !important;
+  transform: scale(1.15);
+}
+
+.aboutus-glass {
+  box-shadow: 0 8px 32px 0 rgba(31,38,135,0.18) !important;
+  border-radius: 2rem !important;
 }
