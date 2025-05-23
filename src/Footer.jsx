@@ -31,36 +31,48 @@ function Footer({ onNavClick }) {
                         <ul className="list-unstyled">
                             <li className="mb-2">
                                 <a
-                                    href="#"
-                                    onClick={e => { e.preventDefault(); onNavClick('termsandconditions'); }}
+                                    href="/termsandconditions"
                                     className="footer-link"
+                                    onClick={e => {
+                                        e.preventDefault();
+                                        onNavClick && onNavClick('termsandconditions');
+                                    }}
                                 >
                                     Terms and Conditions
                                 </a>
                             </li>
                             <li className="mb-2">
                                 <a
-                                    href="#"
-                                    onClick={e => { e.preventDefault(); onNavClick('policy'); }}
+                                    href="/policy"
                                     className="footer-link"
+                                    onClick={e => {
+                                        e.preventDefault();
+                                        onNavClick && onNavClick('policy');
+                                    }}
                                 >
                                     Privacy Policy
                                 </a>
                             </li>
                             <li className="mb-2">
                                 <a
-                                    href="#"
-                                    onClick={e => { e.preventDefault(); onNavClick('aboutus'); }}
+                                    href="/aboutus"
                                     className="footer-link"
+                                    onClick={e => {
+                                        e.preventDefault();
+                                        onNavClick && onNavClick('aboutus');
+                                    }}
                                 >
                                     About Ennjoy
                                 </a>
                             </li>
                             <li>
                                 <a
-                                    href="#"
-                                    onClick={e => { e.preventDefault(); onNavClick('contactus'); }}
+                                    href="/contactus"
                                     className="footer-link"
+                                    onClick={e => {
+                                        e.preventDefault();
+                                        onNavClick && onNavClick('contactus');
+                                    }}
                                 >
                                     Contact Us
                                 </a>
