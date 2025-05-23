@@ -46,7 +46,7 @@ function Body() {
             },
             {
                 group: 'Group A',
-                name: "Shrimal's Challengers",
+                name: "Rising Stars",
                 image: groupA2,
                 captain: 'Sameer Shrimal',
                 insta: 'https://www.instagram.com/shrimalsameer/',
@@ -150,7 +150,7 @@ function Body() {
             },
             {
                 group: 'Group D',
-                name: 'NAB',
+                name: 'Black Panther',
                 image: groupD4,
                 captain: 'Himanshu Soni',
                 insta: 'https://instagram.com/himanshusoni_9/',
