@@ -8,7 +8,7 @@ import {
 import { auth, db } from './firebaseConfig';
 import { doc, setDoc } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
-import logo from './img/icon.png'; // Adjust the path to your logo
+import logo from './img/Icon.png'; // Adjust the path to your logo
 
 const Login = () => {
   const [isSignUp, setIsSignUp] = useState(false);
