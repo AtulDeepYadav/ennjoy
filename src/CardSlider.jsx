@@ -47,15 +47,66 @@ const sliderSettings = {
 
 const CardSlider = () => {
   return (
-    <div className="bg-white rounded-4 my-5 py-2">
-      <div className='bg-dark rounded-4'>
-        <h2 className="text-center fw-bold rounded-4 text-white">Photo Gallery</h2>
-        <h4 className="text-center fw-bold rounded-4 text-warning">Box Cricket Mania 1.0</h4>
+    <div
+      className="rounded-4 my-5 py-4 px-2"
+      style={{
+        background: 'rgba(10,23,78,0.18)',
+        backdropFilter: 'blur(8px)',
+        boxShadow: '0 8px 32px 0 rgba(31,38,135,0.10)',
+      }}
+    >
+      <div
+        className="rounded-4 mb-4 py-3"
+        style={{
+          background: 'linear-gradient(90deg, #0a174e 60%, #00bfff 100%)',
+          boxShadow: '0 2px 12px #00bfff22',
+        }}
+      >
+        <h2
+          className="text-center fw-bold mb-1"
+          style={{
+            color: '#ffd180',
+            fontFamily: "'Poppins', 'Inter', Arial, sans-serif",
+            letterSpacing: '1px',
+            fontSize: '2rem',
+            textShadow: '0 2px 12px #0a174e33',
+          }}
+        >
+          Photo Gallery
+        </h2>
+        <h4
+          className="text-center fw-bold"
+          style={{
+            color: '#fff',
+            fontFamily: "'Poppins', 'Inter', Arial, sans-serif",
+            letterSpacing: '1px',
+            fontSize: '1.2rem',
+          }}
+        >
+          Box Cricket Mania 1.0
+        </h4>
       </div>
       <Slider {...sliderSettings}>
         {cards.map((card, index) => (
           <div key={index} className="px-2">
-            <div className="card h-100 shadow-sm border-0">
+            <div
+              className="card h-100 border-0 shadow-lg"
+              style={{
+                borderRadius: '1.5rem',
+                overflow: 'hidden',
+                transition: 'transform 0.18s, box-shadow 0.18s',
+                background: 'linear-gradient(120deg, #e3f6ff 60%, #b2ebff 100%)',
+                boxShadow: '0 2px 16px #00bfff22',
+              }}
+              onMouseOver={e => {
+                e.currentTarget.style.transform = 'scale(1.04)';
+                e.currentTarget.style.boxShadow = '0 8px 32px #00bfff33';
+              }}
+              onMouseOut={e => {
+                e.currentTarget.style.transform = 'none';
+                e.currentTarget.style.boxShadow = '0 2px 16px #00bfff22';
+              }}
+            >
               <div
                 style={{
                   width: '100%',
@@ -64,9 +115,7 @@ const CardSlider = () => {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  background: '#f8f9fa',
-                  borderTopLeftRadius: '1rem',
-                  borderTopRightRadius: '1rem',
+                  background: 'rgba(255,255,255,0.15)',
                 }}
               >
                 {card.type === 'image' ? (
@@ -83,14 +132,15 @@ const CardSlider = () => {
                 ) : (
                   <video
                     className="card-img-top"
-                    controls
                     autoPlay
                     loop
                     muted
+                    playsInline
                     style={{
                       width: '100%',
                       height: '100%',
                       objectFit: 'cover',
+                      borderRadius: 0,
                     }}
                   >
                     <source src={card.video} type="video/mp4" />
@@ -98,16 +148,50 @@ const CardSlider = () => {
                   </video>
                 )}
               </div>
-              <div className="card-body text-center">
-                <p className="card-text">{card.text}</p>
+              <div className="card-body text-center" style={{ background: 'transparent' }}>
+                <p
+                  className="card-text fw-bold"
+                  style={{
+                    color: '#0a174e',
+                    fontFamily: "'Poppins', 'Inter', Arial, sans-serif",
+                    fontSize: '1.05rem',
+                    letterSpacing: '0.5px',
+                  }}
+                >
+                  {card.text}
+                </p>
               </div>
             </div>
           </div>
         ))}
       </Slider>
-      <div className="text-center">
-        <a href="https://forms.gle/RHBB62YALjhe37A27">
-          <h2 className='text-center mb-4 fw-bold py-4'>Click to view all images</h2>
+      <div className="text-center mt-4">
+        <a
+          href="https://forms.gle/RHBB62YALjhe37A27"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn btn-warning px-5 py-2 fw-bold rounded-pill shadow"
+          style={{
+            fontSize: '1.2rem',
+            letterSpacing: '1px',
+            color: '#0a174e',
+            background: 'linear-gradient(90deg, #ffd180 60%, #fffde4 100%)',
+            border: 'none',
+            boxShadow: '0 2px 12px #ffd18055',
+            transition: 'background 0.18s, color 0.18s, transform 0.18s',
+          }}
+          onMouseOver={e => {
+            e.currentTarget.style.background = '#fffde4';
+            e.currentTarget.style.color = '#00bfff';
+            e.currentTarget.style.transform = 'scale(1.05)';
+          }}
+          onMouseOut={e => {
+            e.currentTarget.style.background = 'linear-gradient(90deg, #ffd180 60%, #fffde4 100%)';
+            e.currentTarget.style.color = '#0a174e';
+            e.currentTarget.style.transform = 'none';
+          }}
+        >
+          View All Images
         </a>
       </div>
     </div>

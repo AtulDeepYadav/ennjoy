@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import './index.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const testimonials = [
     {
@@ -38,40 +38,91 @@ const testimonials = [
 
 const TestimonialCarousel = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
-    const containerRef = useRef(null);
     const testimonialsPerSlide = window.innerWidth < 768 ? 1 : window.innerWidth < 1024 ? 2 : 3;
 
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentIndex((prevIndex) => (prevIndex + 1) % Math.ceil(testimonials.length / testimonialsPerSlide));
         }, 3000);
-
         return () => clearInterval(interval);
     }, [testimonialsPerSlide]);
 
-    const handleDotClick = (index) => {
-        setCurrentIndex(index);
-    };
+    const handleDotClick = (index) => setCurrentIndex(index);
 
     const startIndex = currentIndex * testimonialsPerSlide;
     const visibleTestimonials = testimonials.slice(startIndex, startIndex + testimonialsPerSlide);
 
     return (
-        <div className="testimonial-carousel">
-            <div className="testimonial-container" ref={containerRef}>
+        <div className="container py-4">
+            <div className="row justify-content-center g-4">
                 {visibleTestimonials.map((testimonial, idx) => (
-                    <div key={idx} className="testimonial-card">
-                        <p className="quote">“{testimonial.quote}”</p>
-                        <p className="name">— {testimonial.name}</p>
+                    <div className="col-12 col-md-6 col-lg-4 d-flex" key={idx}>
+                        <div
+                            className="card shadow-lg border-0 rounded-4 flex-fill text-center"
+                            style={{
+                                background: 'rgba(255,255,255,0.88)',
+                                backdropFilter: 'blur(10px)',
+                                transition: 'transform 0.18s, box-shadow 0.18s',
+                            }}
+                            onMouseOver={e => {
+                                e.currentTarget.style.transform = 'scale(1.04)';
+                                e.currentTarget.style.boxShadow = '0 8px 32px #00bfff33, 0 1.5px 8px #ffd18033 inset';
+                            }}
+                            onMouseOut={e => {
+                                e.currentTarget.style.transform = 'none';
+                                e.currentTarget.style.boxShadow = '';
+                            }}
+                        >
+                            <div className="card-body d-flex flex-column justify-content-center align-items-center">
+                                <p className="mb-3" style={{
+                                    fontSize: '1.08rem',
+                                    color: '#0a174e',
+                                    fontWeight: 500,
+                                    minHeight: 70,
+                                    letterSpacing: '0.2px',
+                                }}>
+                                    “{testimonial.quote}”
+                                </p>
+                                <div
+                                    style={{
+                                        width: 40,
+                                        height: 4,
+                                        borderRadius: 2,
+                                        background: 'linear-gradient(90deg, #ffd180 10%, #00bfff 90%)',
+                                        margin: '0 auto 12px auto',
+                                    }}
+                                />
+                                <p className="mb-0" style={{
+                                    color: '#00bfff',
+                                    fontWeight: 700,
+                                    fontSize: '1.05rem',
+                                    letterSpacing: '0.5px',
+                                }}>
+                                    — {testimonial.name}
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 ))}
             </div>
-            <div className="carousel-dots">
+            <div className="d-flex justify-content-center mt-3">
                 {Array.from({ length: Math.ceil(testimonials.length / testimonialsPerSlide) }).map((_, i) => (
-                    <span
+                    <button
                         key={i}
-                        className={`dot ${i === currentIndex ? 'active' : ''}`}
+                        type="button"
+                        className={`mx-1 rounded-circle border-0 ${i === currentIndex ? '' : ''}`}
+                        style={{
+                            width: i === currentIndex ? 16 : 10,
+                            height: i === currentIndex ? 16 : 10,
+                            background: i === currentIndex
+                                ? 'linear-gradient(90deg, #ffd180 10%, #00bfff 90%)'
+                                : '#b2ebff',
+                            border: i === currentIndex ? '2.5px solid #00bfff' : '1.5px solid #ffd180',
+                            transition: 'all 0.18s',
+                            outline: 'none',
+                        }}
                         onClick={() => handleDotClick(i)}
+                        aria-label={`Go to slide ${i + 1}`}
                     />
                 ))}
             </div>

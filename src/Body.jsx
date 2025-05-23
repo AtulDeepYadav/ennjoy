@@ -176,15 +176,14 @@ function Body() {
     return showAbout ? (
         <AboutUs onBack={() => setShowAbout(false)} />
     ) : (
-        <div className="border border-warning border-4 rounded-4">
+        <div className="border border-warning border-4 rounded-4" style={{ fontFamily: "'Poppins', 'Inter', Arial, sans-serif" }}>
             {/* Hero Section */}
             <div
-                className="rounded-4 d-flex flex-column flex-md-row align-items-center justify-content-between vh-40 text-white"
+                className="rounded-4 d-flex flex-column flex-md-row align-items-center justify-content-between vh-40 text-white position-relative"
                 style={{
                     backgroundImage: `url(${bgImage})`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
-                    position: 'relative',
                     padding: '2rem',
                     minHeight: '340px',
                     boxShadow: '0 8px 32px 0 rgba(31,38,135,0.18)',
@@ -192,37 +191,58 @@ function Body() {
                 }}
             >
                 <div
-                    className="rounded-4"
+                    className="rounded-4 position-absolute w-100 h-100"
                     style={{
-                        position: 'absolute',
                         top: 0,
                         left: 0,
-                        width: '100%',
-                        height: '100%',
                         background: 'rgba(10,23,78,0.45)',
                         backdropFilter: 'blur(8px)',
                         zIndex: 0,
                     }}
                 />
                 <div className="text-center text-md-start mb-4 mb-md-0" style={{ zIndex: 1, maxWidth: '600px' }}>
-                    <h1 className="display-4 fw-bold">Welcome to Ennjoy</h1>
-                    <p className="lead mb-3">Connect. Play. Celebrate.</p>
-                    <p className="mb-2">
-                        <strong>Ennjoy</strong> is your all-in-one platform to bring people together — whether it's a cricket match
+                    <h1
+                        className="display-3 fw-bold mb-2"
+                        style={{
+                            background: 'linear-gradient(90deg, #ffd180 30%, #00bfff 100%)',
+                            WebkitBackgroundClip: 'text',
+                            WebkitTextFillColor: 'transparent',
+                            fontFamily: "'Poppins', 'Inter', Arial, sans-serif",
+                            letterSpacing: '2px',
+                            textShadow: '0 2px 12px rgba(0,191,255,0.18)',
+                        }}
+                    >
+                        Welcome to Ennjoy
+                    </h1>
+                    <p className="lead mb-3" style={{ color: '#ffd180', fontWeight: 600, fontSize: '1.5rem' }}>
+                        Connect. Play. Celebrate.
+                    </p>
+                    <p className="mb-2" style={{ color: '#e3e3e3', fontSize: '1.1rem' }}>
+                        <strong style={{ color: '#00bfff' }}>Ennjoy</strong> is your all-in-one platform to bring people together — whether it's a cricket match
                         with friends, a chess tournament at the park, or a cozy rooftop birthday party.
                     </p>
-                    <p className="mb-2">
+                    <p className="mb-2" style={{ color: '#e3e3e3', fontSize: '1.1rem' }}>
                         Ennjoy empowers everyone to turn ideas into experiences.
                         <br />
-                        <span className="text-bold text-warning lead mb-3">Click the circle to know more about us.</span>
+                        <span className="fw-bold text-warning lead mb-3" style={{ fontSize: '1.2rem' }}>
+                            Click the circle to know more about us.
+                        </span>
                     </p>
                 </div>
                 <div className="text-center" style={{ zIndex: 1 }}>
                     <img
                         src={heroImage}
                         alt="Rotating"
-                        className="rounded-circle rotate-img adaptive-img w-100 h-100 px-3 py-3"
-                        style={{ cursor: 'pointer' }}
+                        className="rounded-circle rotate-img adaptive-img w-100 h-100 px-3 py-3 shadow-lg"
+                        style={{
+                            cursor: 'pointer',
+                            border: '4px solid #ffd180',
+                            boxShadow: '0 4px 24px #ffd18055',
+                            maxWidth: '220px',
+                            maxHeight: '220px',
+                            objectFit: 'cover',
+                            background: 'rgba(255,255,255,0.12)',
+                        }}
                         onClick={() => setShowAbout(true)}
                     />
                 </div>
@@ -231,49 +251,125 @@ function Body() {
             <CardSlider />
 
             {/* Group Carousel Section */}
-            <div className="text-dark rounded-4 mt-4">
-                <div className="bg-light rounded-4 px-4 py-4">
-                    <h2 className="text-center fw-bold">
-                        <u>Box Cricket Mania</u>
-                        <br />
-                        <mark className="py-0 rounded-4">(Season 1)</mark>
-                    </h2>
-                    <h4 className="text-center bg-dark rounded-4 text-light py-2">24 & 25 May 2025</h4>
+            <div className="rounded-4 mt-4" style={{
+                background: 'rgba(10,23,78,0.35)',
+                backdropFilter: 'blur(8px)',
+                boxShadow: '0 8px 32px 0 rgba(31,38,135,0.10)',
+                padding: '2rem 1rem'
+            }}>
+                <h2 className="text-center fw-bold mb-2"
+                    style={{
+                        fontFamily: "'Poppins', 'Inter', Arial, sans-serif",
+                        color: '#ffd180',
+                        letterSpacing: '1px',
+                        fontSize: '2.2rem',
+                        textShadow: '0 2px 12px #0a174e33'
+                    }}>
+                    <u>Box Cricket Mania</u>
+                    <br />
+                    <mark className="py-0 rounded-4" style={{
+                        background: '#ffd180',
+                        color: '#0a174e',
+                        fontWeight: 700,
+                        fontSize: '1.1rem',
+                        border: 'none'
+                    }}>(Season 1)</mark>
+                </h2>
+                <h4 className="text-center rounded-4 text-light py-2 mb-4"
+                    style={{
+                        background: 'linear-gradient(90deg, #0a174e 60%, #00bfff 100%)',
+                        fontWeight: 700,
+                        letterSpacing: '1px',
+                        fontSize: '1.3rem',
+                        boxShadow: '0 2px 8px #00bfff22'
+                    }}>
+                    24 & 25 May 2025
+                </h4>
 
-                    {currentSlideGroups.map((groupName) => (
-                        <div key={groupName} className="mb-4">
-                            <h5 className="text-center text-primary mt-4">
-                                <u>{groupName}</u>
-                            </h5>
-                            <div className="row justify-content-center border border-4 border-dark rounded-4 py-2">
-                                {allGroups[groupName].map((team, idx) => (
+                {currentSlideGroups.map((groupName) => (
+                    <div key={groupName} className="mb-4">
+                        <h5 className="text-center mb-3"
+                            style={{
+                                color: '#00bfff',
+                                fontWeight: 700,
+                                letterSpacing: '1px',
+                                fontSize: '1.4rem',
+                                textShadow: '0 1px 6px #0a174e22'
+                            }}>
+                            <u>{groupName}</u>
+                        </h5>
+                        <div className="row justify-content-center g-4">
+                            {allGroups[groupName].map((team, idx) => (
+                                <div
+                                    key={idx}
+                                    className="col-12 col-sm-6 col-md-3 text-center"
+                                    style={{
+                                        minWidth: '200px',
+                                        fontFamily: "'Poppins', 'Inter', Arial, sans-serif",
+                                    }}
+                                >
                                     <div
-                                        key={idx}
-                                        className="col-12 col-sm-6 col-md-3 text-center mb-4"
-                                        style={{ minWidth: '200px' }}
+                                        className="rounded-4 shadow-lg p-3 h-100"
+                                        style={{
+                                            background: 'linear-gradient(120deg, #e3f6ff 60%, #b2ebff 100%)',
+                                            border: '2px solid #ffd18055',
+                                            transition: 'transform 0.18s, box-shadow 0.18s',
+                                            boxShadow: '0 2px 16px #00bfff22'
+                                        }}
+                                        onMouseOver={e => {
+                                            e.currentTarget.style.transform = 'scale(1.04)';
+                                            e.currentTarget.style.boxShadow = '0 8px 32px #00bfff33';
+                                        }}
+                                        onMouseOut={e => {
+                                            e.currentTarget.style.transform = 'none';
+                                            e.currentTarget.style.boxShadow = '0 2px 16px #00bfff22';
+                                        }}
                                     >
                                         <img
                                             src={team.image}
                                             alt={team.name}
-                                            className="img-fluid rounded-circle border border-dark mb-2"
-                                            style={{ width: '120px', height: '120px', objectFit: 'cover' }}
+                                            className="img-fluid rounded-circle border border-warning mb-2 shadow"
+                                            style={{
+                                                width: '110px',
+                                                height: '110px',
+                                                objectFit: 'cover',
+                                                borderWidth: '3px',
+                                                boxShadow: '0 2px 12px #ffd18055',
+                                            }}
                                         />
-                                        <h4 className="fw-bold text-warning">{team.name}</h4>
-                                        <h5 className="mb-1">{team.captain}</h5>
+                                        <h4 className="fw-bold mb-1" style={{
+                                            color: '#0a174e',
+                                            fontSize: '1.15rem',
+                                            marginBottom: '0.2rem',
+                                            letterSpacing: '1px'
+                                        }}>{team.name}</h4>
+                                        <h5 className="mb-1" style={{
+                                            color: '#00bfff',
+                                            fontWeight: 600,
+                                            fontSize: '1rem'
+                                        }}>{team.captain}</h5>
                                         <a
                                             href={team.insta}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="btn btn-outline-primary btn-sm"
+                                            className="btn btn-outline-primary btn-sm rounded-pill fw-bold"
+                                            style={{
+                                                letterSpacing: '1px',
+                                                fontSize: '1rem',
+                                                marginTop: '0.2rem',
+                                                borderWidth: '2px',
+                                                background: '#fff',
+                                                color: '#0a174e'
+                                            }}
                                         >
                                             <i className="bi bi-instagram me-1"></i>Instagram
                                         </a>
                                     </div>
-                                ))}
-                            </div>
+                                </div>
+                            ))}
                         </div>
-                    ))}
-                </div>
+                    </div>
+                ))}
             </div>
             <TestimonialCarousel />
         </div>

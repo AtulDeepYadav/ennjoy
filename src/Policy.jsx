@@ -5,18 +5,38 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 function Policy({ onNavClick }) {
   return (
-    <>
-      <div className="rounded-4 bg-white">
-        <div className="px-2 py-2">
-          <h2>Privacy Policy</h2>
-          <p>Last updated: {/*Comment for edit*/}15 April 2025</p>
+    <div
+      className="d-flex align-items-center justify-content-center"
+      style={{
+        minHeight: '100vh',
+        background: 'linear-gradient(120deg, #e3f6ff 0%, #b2ebff 100%)',
+        fontFamily: "'Poppins', 'Inter', Arial, sans-serif",
+        padding: '32px 0',
+      }}
+    >
+      <div
+        className="rounded-4 shadow-lg"
+        style={{
+          background: 'rgba(255,255,255,0.85)',
+          backdropFilter: 'blur(16px)',
+          maxWidth: 800,
+          width: '100%',
+          border: '2.5px solid',
+          borderImage: 'linear-gradient(90deg, #ffd180 10%, #00bfff 90%) 1',
+          boxShadow: '0 8px 32px 0 rgba(31,38,135,0.18), 0 1.5px 8px #ffd18033 inset',
+          padding: '2.5rem 2rem',
+        }}
+      >
+        <div>
+          <h2 className="fw-bold mb-2" style={{ color: '#0a174e', letterSpacing: '1px' }}>Privacy Policy</h2>
+          <p className="mb-4" style={{ color: '#00bfff', fontWeight: 500 }}>Last updated: 15 April 2025</p>
           <p>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your
             information when You use the Service and tells You about Your privacy rights and how the law protects
             You.</p>
           <p>We use Your Personal data to provide and improve the Service. By using the Service, You agree to the
             collection and use of information in accordance with this Privacy Policy.</p>
-          <h2 class="subHeadPvcH2">Interpretation and Definitions</h2>
-          <h3 class="subHeadPvc">Interpretation</h3>
+          <h2 className="mt-4 mb-2" style={{ color: '#ffd180', fontWeight: 700, fontSize: '1.5rem' }}>Interpretation and Definitions</h2>
+          <h3 className="mb-2" style={{ color: '#0a174e', fontWeight: 600 }}>Interpretation</h3>
           <p>The words of which the initial letter is capitalized have meanings defined under the following
             conditions. The following definitions shall have the same meaning regardless of whether they appear in
             singular or in plural.</p>
@@ -77,9 +97,9 @@ function Policy({ onNavClick }) {
                 applicable.</p>
             </li>
           </ul>
-          <h2 class="subHeadPvcH2">Collecting and Using Your Personal Data</h2>
-          <h3 class="subHeadPvc">Types of Data Collected</h3>
-          <h3 class="subHeadPvc">Personal Data</h3>
+          <h2 className="mt-4 mb-2" style={{ color: '#ffd180', fontWeight: 700, fontSize: '1.5rem' }}>Collecting and Using Your Personal Data</h2>
+          <h3 className="mb-2" style={{ color: '#0a174e', fontWeight: 600 }}>Types of Data Collected</h3>
+          <h3 className="mb-2" style={{ color: '#0a174e', fontWeight: 600 }}>Personal Data</h3>
           <p>While using Our Service, We may ask You to provide Us with certain personally identifiable information
             that can be used to contact or identify You. Personally identifiable information may include, but is not
             limited to:</p>
@@ -100,7 +120,7 @@ function Policy({ onNavClick }) {
               <p>Usage Data</p>
             </li>
           </ul>
-          <h3>Usage Data</h3>
+          <h3 className="mb-2" style={{ color: '#0a174e', fontWeight: 600 }}>Usage Data</h3>
           <p>Usage Data is collected automatically when using the Service.</p>
           <p>Usage Data may include information such as Your Device&#x27;s Internet Protocol address (e.g. IP
             address), browser type, browser version, the pages of our Service that You visit, the time and date of
@@ -111,7 +131,7 @@ function Policy({ onNavClick }) {
             Internet browser You use, unique device identifiers and other diagnostic data.</p>
           <p>We may also collect information that Your browser sends whenever You visit our Service or when You access
             the Service by or through a mobile device.</p>
-          <h3>Tracking Technologies and Cookies</h3>
+          <h3 className="mt-4 mb-2" style={{ color: '#ffd180', fontWeight: 700, fontSize: '1.5rem' }}>Tracking Technologies and Cookies</h3>
           <p>We use Cookies and similar tracking technologies to track the activity on Our Service and store certain
             information. Tracking technologies used are beacons, tags, and scripts to collect and track information
             and to improve and analyze Our Service. The technologies We use may include:</p>
@@ -167,7 +187,7 @@ function Policy({ onNavClick }) {
           </ul>
           <p>For more information about the cookies we use and your choices regarding cookies, please visit our
             Cookies Policy or the Cookies section of our Privacy Policy.</p>
-          <h3>Use of Your Personal Data</h3>
+          <h3 className="mt-4 mb-2" style={{ color: '#ffd180', fontWeight: 700, fontSize: '1.5rem' }}>Use of Your Personal Data</h3>
           <p>The Company may use Personal Data for the following purposes:</p>
           <ul>
             <li>
@@ -234,7 +254,7 @@ function Policy({ onNavClick }) {
             <li><strong>With Your consent</strong>: We may disclose Your personal information for any other purpose
               with Your consent.</li>
           </ul>
-          <h3>Retention of Your Personal Data</h3>
+          <h3 className="mt-4 mb-2" style={{ color: '#ffd180', fontWeight: 700, fontSize: '1.5rem' }}>Retention of Your Personal Data</h3>
           <p>The Company will retain Your Personal Data only for as long as is necessary for the purposes set out in
             this Privacy Policy. We will retain and use Your Personal Data to the extent necessary to comply with
             our legal obligations (for example, if we are required to retain your data to comply with applicable
@@ -243,7 +263,7 @@ function Policy({ onNavClick }) {
             for a shorter period of time, except when this data is used to strengthen the security or to improve the
             functionality of Our Service, or We are legally obligated to retain this data for longer time periods.
           </p>
-          <h3>Transfer of Your Personal Data</h3>
+          <h3 className="mt-4 mb-2" style={{ color: '#ffd180', fontWeight: 700, fontSize: '1.5rem' }}>Transfer of Your Personal Data</h3>
           <p>Your information, including Personal Data, is processed at the Company&#x27;s operating offices and in
             any other places where the parties involved in the processing are located. It means that this
             information may be transferred to — and maintained on — computers located outside of Your state,
@@ -255,16 +275,16 @@ function Policy({ onNavClick }) {
             accordance with this Privacy Policy and no transfer of Your Personal Data will take place to an
             organization or a country unless there are adequate controls in place including the security of Your
             data and other personal information.</p>
-          <h2 class="subHeadPvcH2">Disclosure of Your Personal Data</h2>
-          <h3 class="subHeadPvc">Business Transactions</h3>
+          <h2 className="mt-4 mb-2" style={{ color: '#ffd180', fontWeight: 700, fontSize: '1.5rem' }}>Disclosure of Your Personal Data</h2>
+          <h3 className="mb-2" style={{ color: '#0a174e', fontWeight: 600 }}>Business Transactions</h3>
           <p>If the Company is involved in a merger, acquisition or asset sale, Your Personal Data may be transferred.
             We will provide notice before Your Personal Data is transferred and becomes subject to a different
             Privacy Policy.</p>
-          <h3>Law enforcement</h3>
+          <h3 className="mb-2" style={{ color: '#0a174e', fontWeight: 600 }}>Law enforcement</h3>
           <p>Under certain circumstances, the Company may be required to disclose Your Personal Data if required to do
             so by law or in response to valid requests by public authorities (e.g. a court or a government agency).
           </p>
-          <h3>Other legal requirements</h3>
+          <h3 className="mb-2" style={{ color: '#0a174e', fontWeight: 600 }}>Other legal requirements</h3>
           <p>The Company may disclose Your Personal Data in the good faith belief that such action is necessary to:
           </p>
           <ul>
@@ -274,11 +294,11 @@ function Policy({ onNavClick }) {
             <li>Protect the personal safety of Users of the Service or the public</li>
             <li>Protect against legal liability</li>
           </ul>
-          <h3>Security of Your Personal Data</h3>
+          <h3 className="mt-4 mb-2" style={{ color: '#ffd180', fontWeight: 700, fontSize: '1.5rem' }}>Security of Your Personal Data</h3>
           <p>The security of Your Personal Data is important to Us, but remember that no method of transmission over
             the Internet, or method of electronic storage is 100% secure. While We strive to use commercially
             acceptable means to protect Your Personal Data, We cannot guarantee its absolute security.</p>
-          <h3>Children&#x27;s Privacy</h3>
+          <h3 className="mt-4 mb-2" style={{ color: '#ffd180', fontWeight: 700, fontSize: '1.5rem' }}>Children&#x27;s Privacy</h3>
           <p>Our Service does not address anyone under the age of 13. We do not knowingly collect personally
             identifiable information from anyone under the age of 13. If You are a parent or guardian and You are
             aware that Your child has provided Us with Personal Data, please contact Us. If We become aware that We
@@ -287,20 +307,20 @@ function Policy({ onNavClick }) {
           <p>If We need to rely on consent as a legal basis for processing Your information and Your country requires
             consent from a parent, We may require Your parent&#x27;s consent before We collect and use that
             information.</p>
-          <h3>Links to Other Websites</h3>
+          <h3 className="mt-4 mb-2" style={{ color: '#ffd180', fontWeight: 700, fontSize: '1.5rem' }}>Links to Other Websites</h3>
           <p>Our Service may contain links to other websites that are not operated by Us. If You click on a third
             party link, You will be directed to that third party&#x27;s site. We strongly advise You to review the
             Privacy Policy of every site You visit.</p>
           <p>We have no control over and assume no responsibility for the content, privacy policies or practices of
             any third party sites or services.</p>
-          <h3>Changes to this Privacy Policy</h3>
+          <h3 className="mt-4 mb-2" style={{ color: '#ffd180', fontWeight: 700, fontSize: '1.5rem' }}>Changes to this Privacy Policy</h3>
           <p>We may update Our Privacy Policy from time to time. We will notify You of any changes by posting the new
             Privacy Policy on this page.</p>
           <p>We will let You know via email and/or a prominent notice on Our Service, prior to the change becoming
             effective and update the &#x27;Last updated&#x27; date at the top of this Privacy Policy.</p>
           <p>You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy
             Policy are effective when they are posted on this page.</p>
-          <h3>Contact Us</h3>
+          <h3 className="mt-4 mb-2" style={{ color: '#0a174e', fontWeight: 600 }}>Contact Us</h3>
           <p>If you have any questions about this Privacy Policy, You can contact us:</p>
           <ul>
             <li>By email: {/*Comment for edit*/}ennjoywithus@gmail.com</li>
@@ -308,7 +328,7 @@ function Policy({ onNavClick }) {
         </div>
       </div>
 
-    </>
+    </div>
   );
 }
 

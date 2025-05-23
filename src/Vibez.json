@@ -9,7 +9,7 @@
       "avgAge": 25,
       "minAge": 18,
       "maxAge": 35,
-      "images": ["src/img/bookreading.jpg", "/img/vibez_1.jpg", "src/img/vibez_3.jpg"],
+      "images": ["/img/bookreading.jpg", "/img/vibez_1.jpg", "/img/vibez_3.jpg"],
       "description": "A relaxed event where book enthusiasts gather to discuss and read books together.",
       "registrationFees": {
         "male": 200,
@@ -31,7 +31,7 @@
       "avgAge": 28,
       "minAge": 21,
       "maxAge": 32,
-      "images": ["src/img/bookreading.jpg", "/img/vibez_1.jpg", "src/img/vibez_3.jpg"],
+      "images": ["/img/bookreading.jpg", "/img/vibez_1.jpg", "/img/vibez_3.jpg"],
       "description": "A fun, high-energy party event with music and dancing for all to enjoy.",
       "registrationFees": {
         "male": 500,
@@ -53,7 +53,7 @@
       "avgAge": 26,
       "minAge": 20,
       "maxAge": 30,
-      "images": ["src/img/bookreading.jpg", "/img/vibez_1.jpg", "src/img/vibez_3.jpg"],
+      "images": ["/img/bookreading.jpg", "/img/vibez_1.jpg", "/img/vibez_3.jpg"],
       "description": "A unique opportunity to meet someone new with a blind date format.",
       "registrationFees": {
         "male": 300,
@@ -75,7 +75,7 @@
         "avgAge": 26,
         "minAge": 20,
         "maxAge": 30,
-        "images": ["src/img/bookreading.jpg", "/img/vibez_1.jpg", "src/img/vibez_3.jpg"],
+        "images": ["/img/bookreading.jpg", "/img/vibez_1.jpg", "/img/vibez_3.jpg"],
         "description": "A unique opportunity to meet someone new with a blind date format.",
         "registrationFees": {
           "male": 300,

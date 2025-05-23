@@ -1,9 +1,14 @@
 /* @import 'bootstrap/dist/css/bootstrap.min.css'; */
 @import 'bootstrap-icons/font/bootstrap-icons.css';
 
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
 /* General Background Gradient Animation */
 body {
-  background: #f6fbff;
+  font-family: 'Poppins', 'Inter', Arial, sans-serif;
+  background: linear-gradient(120deg, #e3f6ff 0%, #b2ebff 100%);
+  color: #0a174e;
   margin: 0;
   padding: 0;
 }
@@ -51,14 +56,11 @@ body {
 }
 
 .rotate-img {
-  animation: rotate 20s linear infinite;
+  animation: rotate 12s linear infinite;
 }
 
 @keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
+  100% {
     transform: rotate(360deg);
   }
 }
@@ -230,4 +232,9 @@ body {
 .aboutus-glass {
   box-shadow: 0 8px 32px 0 rgba(31,38,135,0.18) !important;
   border-radius: 2rem !important;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: #ffd180;
+  box-shadow: 0 0 0 0.2rem #ffd18044;
 }
