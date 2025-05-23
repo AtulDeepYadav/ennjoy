@@ -57,12 +57,11 @@ const TeamCards = () => {
           background: 'rgba(255,255,255,0.90)',
           borderRadius: '2rem',
           border: '2.5px solid',
-          borderImage: 'linear-gradient(90deg, #ffd180 10%, #00bfff 90%) 1',
           boxShadow: '0 8px 32px 0 rgba(31,38,135,0.18), 0 1.5px 8px #ffd18033 inset',
           padding: '2.5rem 2rem',
         }}
       >
-        <h3 className="mb-2 text-center fw-bold" style={{ color: '#00bfff', letterSpacing: '2px', fontSize: '2.2rem', textShadow: '0 2px 12px #0a174e33' }}>
+        <h3 className="mb-2 text-center fw-bold" style={{ color: '#000', letterSpacing: '2px', fontSize: '2.2rem', textShadow: '0 2px 12px #0a174e33' }}>
           Meet Our Team
         </h3>
         <div

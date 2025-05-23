@@ -147,7 +147,7 @@ function Playz() {
                 <h2
                     className="text-center fw-bold mb-2"
                     style={{
-                        color: '#00bfff',
+                        color: '#000',
                         letterSpacing: '2px',
                         fontSize: '2.4rem',
                         fontFamily: "'Poppins', 'Inter', Arial, sans-serif",

@@ -126,7 +126,6 @@ const Login = () => {
           maxWidth: 430,
           width: '100%',
           border: '2.5px solid',
-          borderImage: 'linear-gradient(90deg, #ffd180 10%, #00bfff 90%) 1',
           boxShadow: '0 8px 32px 0 rgba(31,38,135,0.18), 0 1.5px 8px #ffd18033 inset',
         }}
       >
