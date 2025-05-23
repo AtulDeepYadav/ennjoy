@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { useEffect } from 'react';
 import './index.css';
 import Header from './Header.jsx';
 import Body from './Body.jsx';
@@ -35,7 +36,7 @@ function App() {
   const renderContent = () => {
     switch (activePage) {
       case 'playz':
-        return <Playz />;
+        return <Playz onNavClick={setActivePage} />;
       case 'vibez':
         return <Vibez onNavClick={setActivePage} />;
       case 'login':
