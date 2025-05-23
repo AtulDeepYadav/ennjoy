@@ -51,7 +51,10 @@ const sliderSettings = {
 const CardSlider = () => {
   return (
     <div className="container bg-white rounded-4 my-5 py-2">
-      <h2 className="text-center mb-4 fw-bold py-2 bg-dark rounded-4 text-white">Box Mania Updates</h2>
+        <div className='bg-dark rounded-4'>
+      <h2 className="text-center fw-bold rounded-4 text-white">Photo Gallery</h2>
+      <h4 className="text-center fw-bold rounded-4 text-warning">Box Cricket Mania 1.0</h4>
+      </div>
       <Slider {...sliderSettings}>
         {cards.map((card, index) => (
           <div key={index} className="px-2">
