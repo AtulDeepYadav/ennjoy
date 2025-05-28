@@ -4,7 +4,7 @@ import Slider from 'react-slick';
 // Import images
 import card1 from './img/BoxMatch/BCM-1.jpg';
 import card2 from './img/BoxMatch/BCM-2.jpg';
-import card3 from './img/BoxMatch/Messi.JPG';
+import card3 from './img/BoxMatch/Messi.jpg';
 import card4 from './img/BoxMatch/founderswag.jpg';
 import card5 from './img/BoxMatch/playz_1.jpeg';
 // Import video
