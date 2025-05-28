@@ -1,0 +1,240 @@
+/* @import 'bootstrap/dist/css/bootstrap.min.css'; */
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* General Background Gradient Animation */
+body {
+  font-family: 'Poppins', 'Inter', Arial, sans-serif;
+  background: linear-gradient(120deg, #e3f6ff 0%, #b2ebff 100%);
+  color: #0a174e;
+  margin: 0;
+  padding: 0;
+}
+
+/* Particle System Background */
+.particle-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.particle {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  background: rgb(0, 0, 0);
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: drift 5s ease-in-out infinite;
+}
+
+@keyframes drift {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(40px, -30px);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 0.5;
+  }
+}
+
+/* Utility Classes */
+.bg-purple {
+  background-color: #6f42c1 !important;
+}
+
+.rotate-img {
+  animation: rotate 12s linear infinite;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Adaptive Image Sizing */
+.adaptive-img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .adaptive-img {
+    width: 700px;
+    height: 700px;
+  }
+}
+
+.carousel-indicators {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.carousel-indicators li {
+    text-indent: -9999px; /* Hides any number fallback text */
+}
+
+.testimonial-carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.scroll-container {
+    animation: scroll-left 25s linear infinite;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+.testimonial {
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+    background-color: #343a40;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+.testimonial-carousel .overflow-auto::-webkit-scrollbar {
+    display: none;
+}
+.testimonial-carousel .overflow-auto {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+.testimonial-carousel {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+    overflow: hidden;
+    padding: 20px 10px;
+}
+
+.testimonial-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    transition: transform 0.5s ease-in-out;
+}
+
+.testimonial-card {
+    background: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.quote {
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.name {
+    font-weight: bold;
+    color: #555;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    background-color: #ccc;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #333;
+}
+
+.aesthetic-tab {
+  color: #fff !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 2rem !important;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: background 0.2s, color 0.2s, transform 0.18s;
+  padding: 0.5rem 1.5rem;
+}
+.aesthetic-tab:hover,
+.aesthetic-tab:focus {
+  background: rgba(255,255,255,0.18) !important;
+  color: #0a174e !important;
+  outline: none;
+  transform: scale(1.07);
+}
+
+.shadow-lg {
+  box-shadow: 0 8px 32px 0 rgba(31,38,135,0.18) !important;
+}
+
+.footer-link {
+  color: #fff !important;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: color 0.2s;
+}
+.footer-link:hover {
+  color: #ffd180 !important;
+  text-decoration: underline;
+}
+
+.footer-social-link {
+  color: #fff !important;
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+  transition: color 0.2s, transform 0.2s;
+  display: inline-block;
+}
+.footer-social-link:hover {
+  color: #ffd180 !important;
+  transform: scale(1.15);
+}
+
+.aboutus-glass {
+  box-shadow: 0 8px 32px 0 rgba(31,38,135,0.18) !important;
+  border-radius: 2rem !important;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: #ffd180;
+  box-shadow: 0 0 0 0.2rem #ffd18044;
+}

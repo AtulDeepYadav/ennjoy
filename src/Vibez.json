@@ -1,0 +1,80 @@
+[
+    {
+      "title": "Book Reading",
+      "organiser": "City Library",
+      "date": "2025-05-10",
+      "location": "Jaipur, Rajasthan, India",
+      "malePercent": 40,
+      "femalePercent": 60,
+      "avgAge": 25,
+      "minAge": 18,
+      "maxAge": 35,
+      "images": [
+        "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80"
+      ],
+      "description": "A relaxed event where book enthusiasts gather to discuss and read books together.",
+      "registrationFees": {
+        "male": 200,
+        "female": 150,
+        "couple": 300
+      },
+      "foodMenu": ["Sandwiches", "Pastries", "Fruits"],
+      "drinks": ["Tea", "Coffee", "Juices"],
+      "smoke": "No Smoking",
+      "locationMap": "https://www.google.com/maps?q=Jaipur, Rajasthan, India"
+    },
+    {
+      "title": "Party Masters",
+      "organiser": "Vibez Team",
+      "date": "2025-05-12",
+      "location": "Jaipur, Rajasthan, India",
+      "malePercent": 50,
+      "femalePercent": 50,
+      "avgAge": 28,
+      "minAge": 21,
+      "maxAge": 32,
+      "images": [
+        "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80"
+      ],
+      "description": "A fun, high-energy party event with music and dancing for all to enjoy.",
+      "registrationFees": {
+        "male": 500,
+        "female": 450,
+        "couple": 900
+      },
+      "foodMenu": ["Burgers", "Pizza", "Fries"],
+      "drinks": ["Beer", "Cocktails", "Soft Drinks"],
+      "smoke": "Smoking Zone Available",
+      "locationMap": "https://www.google.com/maps?q=Jaipur, Rajasthan, India"
+    },
+    {
+      "title": "Blind Date",
+      "organiser": "MatchPoint",
+      "date": "2025-05-12",
+      "location": "Delhi, India",
+      "malePercent": 45,
+      "femalePercent": 55,
+      "avgAge": 26,
+      "minAge": 20,
+      "maxAge": 30,
+      "images": [
+        "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?auto=format&fit=crop&w=600&q=80"
+      ],
+      "description": "A unique opportunity to meet someone new with a blind date format.",
+      "registrationFees": {
+        "male": 300,
+        "female": 250,
+        "couple": 500
+      },
+      "foodMenu": ["Sushi", "Tacos", "Salads"],
+      "drinks": ["Wine", "Water", "Mocktails"],
+      "smoke": "No Smoking",
+      "locationMap": "https://www.google.com/maps?q=Delhi, India"
+    }
+  ]
